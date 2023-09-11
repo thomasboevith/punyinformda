@@ -1,3 +1,4 @@
+!% -Cu
 !% -~S
 !% $OMIT_UNUSED_ROUTINES=1
 !% $ZCODE_LESS_DICT_DATA=1
@@ -12,7 +13,7 @@
 ! $ZCODE_LESS_DICT_DATA=1 removes an empty data byte for every dictionary word.
 
 Constant Story      "Minimal";
-Constant Headline   "^A sample game which uses PunyInform.^";
+Constant Headline   "^Et eksempel-eventyr med PunyInformDa.^";
 
 ! Uncomment ONE of the two following lines, to show either time or score/turns
 ! Leaving both commented out makes the library bigger.
@@ -57,7 +58,7 @@ Constant OPTIONAL_NO_DARKNESS;
 ! Define any library constants you need here, like MAX_SCORE, AMUSING_PROVIDED,
 ! MAX_CARRIED, SACK_OBJECT,  etc.
 
-Constant INITIAL_LOCATION_VALUE = Library;
+Constant INITIAL_LOCATION_VALUE = Biblioteket;
 
 Include "globals.h";
 
@@ -77,16 +78,16 @@ Include "puny.h";
 ! Uncomment to add PunyLib extensions
 !Include "ext_waittime.h";
 
-Object Library "The Library"
+Object Biblioteket "Biblioteket"
 	with
-		description "You are in a library.";
+		description "Du er i et bibliotek.";
 
-Object -> Box "box"
+Object -> Kasse "kasse"
 	with
-		name 'box',
-		inside_description "It feels so nice, standing in the box.",
+		name 'kasse',
+		inside_description "Det føles virkelig rart at stå i kassen.",
 	has container open openable enterable;
 
 [Initialise;
-	print "^^And so the story begins...^^";
+	print "^^Og således begynder eventyret...^^";
 ];
