@@ -2,6 +2,13 @@
 !
 System_file;
 
+!DANISH
+#IfV5;
+Zcharacter 'æ';
+Zcharacter 'ø';
+Zcharacter 'å';
+#EndIf;
+
 Constant PUNYINFORM_MAJOR_VERSION = 5;
 Constant PUNYINFORM_MINOR_VERSION = 0;
 Constant PUNYINFORM_PATCH_VERSION = 0; ! Usually 0 (if zero, it is not printed in banner)
@@ -219,6 +226,9 @@ Property additive describe $ffff;
 Property additive before $ffff;
 Property additive after  $ffff;
 
+!DANISH
+Property short_name_def;
+
 Property n_to;  Property s_to; !  Slightly wastefully, these are
 Property e_to;  Property w_to; !  (they might be routines)
 #IfDef OPTIONAL_FULL_DIRECTIONS;
@@ -322,60 +332,100 @@ Constant DIRECTION_COUNT = 8;
 
 #EndIf; ! not OPTIONAL_FULL_DIRECTIONS
 
+!DANISH
 #IfDef OPTIONAL_ALLOW_WRITTEN_NUMBERS;
 Array LanguageNumbers static table
-    'one' 1 'two' 2 'three' 3 'four' 4 'five' 5
-    'six' 6 'seven' 7 'eight' 8 'nine' 9 'ten' 10
-    'eleven' 11 'twelve' 12 'thirteen' 13 'fourteen' 14 'fifteen' 15
-    'sixteen' 16 'seventeen' 17 'eighteen' 18 'nineteen' 19 'twenty' 20;
+    'en' 1 'et' 1 'to' 2 'tre' 3 'fire' 4 'fem' 5
+    'seks' 6 'syv' 7 'otte' 8 'ni' 9 'ti' 10
+    'elleve' 11 'tolv' 12 'tretten' 13 'fjorten' 14 'femten' 15
+    'seksten' 16 'sytten' 17 'atten' 18 'nitten' 19 'tyve' 20;
 #EndIf;
 
+!DANISH
 #Ifdef OPTIONAL_LANGUAGE_NUMBER;
 #Ifdef OPTIONAL_ALLOW_WRITTEN_NUMBERS;
 #IfV3;
 Array LanguageNumberStrings static -->
-    "thirteen"
-    "fourteen"
-    "fifteen"
-    "sixteen"
-    "seventeen"
-    "eighteen"
-    "nineteen";
+    "tretten"
+    "fjorten"
+    "femten"
+    "seksten"
+    "sytten"
+    "atten"
+    "nitten";
 #Endif;
 #Ifnot; ! Not OPTIONAL_ALLOW_WRITTEN_NUMBERS
+
+!DANISH
 Array LanguageNumberStrings static -->
-	"one"
-	"two"
-	"three"
-    "four"
-    "five"
-    "six"
-    "seven"
-    "eight"
-    "nine"
-    "ten"
-    "eleven"
-    "twelve"
-    "thirteen"
-    "fourteen"
-    "fifteen"
-    "sixteen"
-    "seventeen"
-    "eighteen"
-    "nineteen";
+	"en"
+	"to"
+	"tre"
+    "fire"
+    "fem"
+    "seks"
+    "syv"
+    "otte"
+    "ni"
+    "ti"
+    "elleve"
+    "tolv"
+    "tretten"
+    "fjorten"
+    "femten"
+    "seksten"
+    "sytten"
+    "atten"
+    "nitten";
 #Endif; ! Not OPTIONAL_ALLOW_WRITTEN_NUMBERS
 
+!DANISH
 Array LanguageNumberTensStrings static -->
-	"twenty"
-    "thirty"
-    "forty"
-    "fifty"
-    "sixty"
-    "seventy"
-    "eighty"
-    "ninety";
+	"tyve"
+    "tredive"
+    "fyrre"
+    "halvtreds"
+    "tres"
+    "halvfjerds"
+    "firs"
+    "halvfems";
 #Endif; ! OPTIONAL_LANGUAGE_NUMBER
 
+!DANISH
+Constant ARTICLE_EN          = 0;
+Constant ARTICLE_ET          = 3;
+Constant ARTICLE_NOGLE       = 6;
+
+!DANISH
+Array LanguageArticles-->
+   "Den "  "den "  "en "     ! uter sing (fælleskøn)
+   "Det "  "det "  "et "     ! neuter sing (intetkøn)
+   "De "   "de "   "nogle "  ! plural (flertal)
+;!End_Array
+
+Array StorageForShortName buffer 12; !Warning : valeur à ne pas dépasser
+
+!From FRENCH
+#IfV5;
+! From library 6.12
+[ LTI_Insert i ch  b y; !WARNING vérifier pour v3
+
+    ! Protect us from strict mode, as this isn't an array in quite the
+    ! sense it expects
+    b = buffer;
+
+    ! Insert character ch into buffer at point i.
+    ! Being careful not to let the buffer possibly overflow:
+    y = b->1;
+    if (y > b->0) y = b->0;
+
+    ! Move the subsequent text along one character:
+    for (y=y+2 : y>i : y--) b->y = b->(y-1);
+    b->i = ch;
+    ! And the text is now one character longer:
+    if (b->1 < b->0) (b->1)++;
+];
+#Endif;
 
 Constant TT_OBJECT           = 1;    ! one or more words referring to an object
                                      ! it is one of NOUN_TOKEN etc. below
