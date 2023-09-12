@@ -163,8 +163,9 @@ Constant RTE_VERBOSE = 2;
 Constant CS_ERR = "^[Cheap_scenery error #";
 #Endif;
 
+!DANISH
 #Ifndef CS_DEFAULT_MSG;
-Constant CS_DEFAULT_MSG "No need to concern yourself with that.";
+Constant CS_DEFAULT_MSG "Der er ingen grund til at bekymre dig om dét.";
 #Endif;
 
 Constant CS_NO_ADJ = 1;
@@ -411,10 +412,10 @@ Global cs_parse_name_id = 0;
 	return _longest;
 ];
 
-
+!DANISH
 Object CheapScenery "object"
 	with
-		article "an",
+		article "en",
 		parse_name [ _ret;
 			CSData-->CSDATA_MATCH_LENGTH = 0;
 			_ret = _ParseCheapScenery(location, cheap_scenery, wn);
