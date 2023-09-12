@@ -361,19 +361,20 @@ Constant ONE_SPACE_STRING = " ";
 
 #Ifdef OPTIONAL_LANGUAGE_NUMBER;
 
+!DANISH
 [ LanguageNumber n f;
-    if (n == 0)    { print "zero"; rfalse; }
+    if (n == 0)    { print "nul"; rfalse; }
     if (n < 0)     { print "minus "; n = -n; }
-    if (n >= 1000) { print (LanguageNumber) n/1000, " thousand"; n = n%1000; f = 1; }
+    if (n >= 1000) { print (LanguageNumber) n/1000, " tusind"; n = n%1000; f = 1; }
     if (n >= 100)  {
         if (f == 1) print ", ";
-        print (LanguageNumber) n/100, " hundred"; n = n%100; f = 1;
+        print (LanguageNumber) n/100, " hundrede"; n = n%100; f = 1;
     }
     if (n == 0) rfalse;
     #Ifdef DIALECT_US;
     if (f == 1) print " ";
     #Ifnot;
-    if (f == 1) print " and ";
+    if (f == 1) print " og ";
     #Endif;
 #Ifdef OPTIONAL_ALLOW_WRITTEN_NUMBERS;
 #IfV3;
@@ -405,9 +406,9 @@ Constant ONE_SPACE_STRING = " ";
 
 #Endif;
 
-
+ !DANISH
 [ PrintShortName o;
-    if (o == 0) { print "nothing"; rtrue; }
+    if (o == 0) { print "intet"; rtrue; }
     switch (metaclass(o)) {
       Routine:  print "<routine ", o, ">"; rtrue;
       String:   print "<string ~", (string) o, "~>"; rtrue;
@@ -417,24 +418,45 @@ Constant ONE_SPACE_STRING = " ";
     print (object) o;
 ];
 
+!DANISH
 [ _PrintObjName p_obj p_form;
-	if(p_obj hasnt proper) {
-		if(p_form == FORM_CDEF) {
-			print "The ";
-		} else if(p_form == FORM_DEF) {
-			print "the ";
-		} else if(p_form == FORM_INDEF) {
-			if(p_obj.&article) {
-				PrintOrRun(p_obj, article, true);
-				print " ";
-			}
-			else if(p_obj has pluralname)
-				print "some ";
-			else
-				print "a ";
-		}
-	}
-	PrintShortName(p_obj);
+    !if(p_obj.short_name_def ~= 0) print "SHORT_NAME_DEF";
+    if(p_obj hasnt proper && p_form) {
+        if (p_obj.article ofclass Routine)
+            RunRoutines(p_obj, article);
+        else {
+            if(p_form == FORM_CDEF) {
+                !print "FORM_CDEF";
+                !print (string) LanguageArticles-->(p_obj.article);
+                !PrintShortName(p_obj);
+                if(p_obj.short_name_def ~= 0) print (string) p_obj.short_name_def;
+                else if (p_obj has neuter) print (object) p_obj, "et";
+                else if (p_obj has pluralname) print (object) p_obj, "ene";
+                else print (object) p_obj, "en"; ! defaults to uter 
+           }
+            else if(p_form == FORM_DEF) {
+                !print "FORM_DEF";
+                if(p_obj.short_name_def ~= 0) print (string) p_obj.short_name_def;
+                else if (p_obj has neuter) print (object) p_obj, "et";
+                else if (p_obj has pluralname) print (object) p_obj, "ene";
+                else print (object) p_obj, "en"; ! defaults to uter
+            }
+            else if(p_form == FORM_INDEF) {
+                !print "FORM_INDEF";
+                if(p_obj.&article) {
+                    print (string) LanguageArticles-->(p_obj.article+2);
+                    !PrintOrRun(p_obj, article, true);
+                }
+                else if(p_obj has pluralname)
+                    print "nogle ";
+                else {
+                    if (p_obj has neuter) print "et ";
+                    else print "en ";
+                }
+                PrintShortName(p_obj);
+            }
+        }
+    }
 ];
 
 [ _IsAreString p_plural;
@@ -442,23 +464,24 @@ Constant ONE_SPACE_STRING = " ";
 	return IS_STR;
 ];
 
+!DANISH
 [ _PrintAfterEntry p_obj;
 #Ifndef OPTIONAL_NO_DARKNESS;
-	if(p_obj has light && p_obj hasnt animate) print " (providing light)";
+	if(p_obj has light && p_obj hasnt animate) print " (giver lys)";
 #Endif;
-	if(p_obj has worn && action == ##Inv) print " (worn)";
-	if(p_obj has container && p_obj hasnt open) print " (which is closed)";
+	if(p_obj has worn && action == ##Inv) print " (båret)";
+	if(p_obj has container && p_obj hasnt open) print " (som er lukket)";
 	if(p_obj has container && (p_obj has open || p_obj has transparent)) {
 		if(PrintContentsFromR(1, child(p_obj)) == 0) {
-			print " (which is empty)";
+			print " (som er tom)";
 			if(c_style & NEWLINE_BIT)
 				new_line;
 		} else {
 			if(c_style & NEWLINE_BIT == 0)
-				print " (which contains ";
+				print " (som indeholder ";
 			else {
 				if(p_obj has open)
-					print " (which is open)";
+					print " (som er åben)";
 				new_line;
 			}
 			c_style = c_style & ~ISARE_BIT;
@@ -473,7 +496,7 @@ Constant ONE_SPACE_STRING = " ";
 			new_line;
 			PrintContentsFromR(0, child(p_obj));
 		} else
-			if(PrintContents(" (on which ", p_obj, ISARE_BIT)) print (char) ')';
+			if(PrintContents(" (på hvilken ", p_obj, ISARE_BIT)) print (char) ')';
 	} else if(c_style & NEWLINE_BIT)
 		new_line;
 ];
@@ -761,7 +784,7 @@ Constant ONE_SPACE_STRING = " ";
 	}
 
 	if(_last_obj) {
-		if(_printed_any_objects ~= 0 && c_style & NEWLINE_BIT == 0) print " and ";
+		if(_printed_any_objects ~= 0 && c_style & NEWLINE_BIT == 0) print " og ";
 #Ifdef OPTIONAL_LIST_TOGETHER;
 		if(_last_obj_was_LT_special)
 			_PrintContentsPrintLTGroup(_last_obj);
@@ -804,7 +827,7 @@ Constant ONE_SPACE_STRING = " ";
 			if(PrintOrRun(p_obj, invent, true)) rtrue;
 		}
 		_PrintAfterEntry(p_obj);
-	} else if(c_style & NEWLINE_BIT) 
+	} else if(c_style & NEWLINE_BIT)
 		new_line;
 
 ];
@@ -849,7 +872,7 @@ Constant ONE_SPACE_STRING = " ";
 	}
 ];
 
-[ MoveFloatingObjects _i _j _o _len _obj;	
+[ MoveFloatingObjects _i _j _o _len _obj;
 	while((_obj = floating_objects-->_i) ~= 0) {
 		if(IndirectlyContains(player, _obj))
 			jump _continue_loop;
@@ -2047,12 +2070,13 @@ Include "parser.h";
 ];
 #EndIf;
 
+!DANISH
 #Ifndef CUSTOM_PLAYER_OBJECT;
-Object selfobj "you"
+Object selfobj "du"
 	with
-		name 'me' 'myself' 'self',
-		short_name  "yourself",
-		description "As good-looking as ever.",
+		name 'mig' 'mig selv' 'selv',
+		short_name  "dig selv",
+		description "Nydelig som altid.",
 		before NULL,
 		after NULL,
 		life NULL,
@@ -2067,11 +2091,12 @@ Object selfobj "you"
 	has concealed animate proper transparent;
 #Endif;
 
+!DANISH
 #Ifndef OPTIONAL_NO_DARKNESS;
-Object thedark "Darkness"
+Object thedark "Mørke"
 	with
 		initial 0,
-		description "It is pitch dark here!",
+		description "Det er bælgmørkt her!",
  		short_name 0;
 #Endif;
 
@@ -2441,12 +2466,13 @@ Object thedark "Darkness"
 			PerformUndo();
 		}
 #Endif;
-		if(verb_word == 'restart') @restart;
-		if(verb_word == 'restore') RestoreSub();
-		if(AMUSING_PROVIDED == 0 && deadflag == 2 && verb_word == 'amusing') Amusing();
-		if(verb_word == 'quit') @quit;
+            !DANISH
+            if(verb_word == 'genstart') @restart;
+		if(verb_word == 'hent') RestoreSub();
+		if(AMUSING_PROVIDED == 0 && deadflag == 2 && verb_word == 'bonus') Amusing();
+		if(verb_word == 'afslut') @quit;
 #IfDef OPTIONAL_FULL_SCORE;
-		if(verb_word == 'full') FullScoreSub();
+		if(verb_word == 'total') FullScoreSub();
 #EndIf;
 	}
 ];
