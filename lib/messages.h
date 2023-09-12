@@ -9,146 +9,146 @@ System_file;
 !
 
 #Ifndef MSG_TAKE_YOURSELF;
-Constant MSG_TAKE_YOURSELF "You are always self-possessed.";
+Constant MSG_TAKE_YOURSELF "Du er noget selvoptaget.";
 #EndIf;
 #Ifndef MSG_TAKE_NO_CAPACITY;
-Constant MSG_TAKE_NO_CAPACITY "You are carrying too many things already.";
+Constant MSG_TAKE_NO_CAPACITY "Du bærer allerede på for meget.";
 #EndIf;
 #Ifndef MSG_TAKE_DEFAULT;
-Constant MSG_TAKE_DEFAULT "Taken.";
+Constant MSG_TAKE_DEFAULT "Taget.";
 #EndIf;
 #Ifndef MSG_DRINK_NOTHING_SUITABLE;
-Constant MSG_DRINK_NOTHING_SUITABLE "There's nothing suitable to drink here.";
+Constant MSG_DRINK_NOTHING_SUITABLE "Der er intet værd at drikke her.";
 #EndIf;
 #Ifndef MSG_DROP_DROPPED;
-Constant MSG_DROP_DROPPED "Dropped.";
+Constant MSG_DROP_DROPPED "Smidt.";
 #EndIf;
 #Ifndef MSG_THROW_ANIMATE;
-Constant MSG_THROW_ANIMATE "Futile.";
+Constant MSG_THROW_ANIMATE "Meningsløst.";
 #Endif;
 #Ifndef MSG_THROW_DEFAULT;
-Constant MSG_THROW_DEFAULT "You lack the nerve when it comes to the crucial moment.";
+Constant MSG_THROW_DEFAULT "Da det kommer til stykket, tør du ikke.";
 #Endif;
 #Ifndef MSG_SMELL_DEFAULT;
-Constant MSG_SMELL_DEFAULT "You smell nothing unexpected.";
+Constant MSG_SMELL_DEFAULT "Du lugter ikke noget uventet.";
 #Endif;
 #Ifndef MSG_LISTEN_DEFAULT;
-Constant MSG_LISTEN_DEFAULT "You hear nothing unexpected.";
+Constant MSG_LISTEN_DEFAULT "Du hører ikke noget uventet.";
 #Endif;
 #Ifndef MSG_TELL_PLAYER;
-Constant MSG_TELL_PLAYER "You talk to yourself for a while.";
+Constant MSG_TELL_PLAYER "Du taler lidt med dig selv.";
 #Endif;
 #Ifndef MSG_TELL_DEFAULT;
-Constant MSG_TELL_DEFAULT "This provokes no reaction.";
+Constant MSG_TELL_DEFAULT "Ingen reaktion.";
 #Endif;
 #Ifndef MSG_ENTER_ALREADY;
-Constant MSG_ENTER_ALREADY "But you are already there!";
+Constant MSG_ENTER_ALREADY "Men du er der jo allerede!";
 #Endif;
 #Ifndef MSG_EXIT_ALREADY;
-Constant MSG_EXIT_ALREADY "But you aren't in anything at the moment!";
+Constant MSG_EXIT_ALREADY "Men du er ikke inde i noget lige nu!";
 #Endif;
 #Ifndef MSG_EXIT_NOT_ON;
-Constant MSG_EXIT_NOT_ON "You aren't on that.";
+Constant MSG_EXIT_NOT_ON "Du er ikke på noget lige nu.";
 #Endif;
 #Ifndef MSG_EXIT_NOT_IN;
-Constant MSG_EXIT_NOT_IN "You aren't in that.";
+Constant MSG_EXIT_NOT_IN "Du er ikke inde i noget lige nu.";
 #Endif;
 #Ifndef MSG_INVENTORY_EMPTY;
-Constant MSG_INVENTORY_EMPTY "You are empty handed.";
+Constant MSG_INVENTORY_EMPTY "Du er tomhændet.";
 #Endif;
 #Ifndef MSG_GO_CANT_GO;
-Constant MSG_GO_CANT_GO "You can't go that way.";
+Constant MSG_GO_CANT_GO "Du kan ikke gå den vej.";
 #Endif;
 #Ifndef MSG_SAVE_DEFAULT;
-Constant MSG_SAVE_DEFAULT "Ok.";
+Constant MSG_SAVE_DEFAULT "OK.";
 #Endif;
 #Ifndef MSG_INSERT_ITSELF;
-Constant MSG_INSERT_ITSELF "You can't put something inside itself.";
+Constant MSG_INSERT_ITSELF "Du kan ikke lægge noget inden i sig selv.";
 #Endif;
 #Ifndef MSG_PUTON_ITSELF;
-Constant MSG_PUTON_ITSELF "You can't put something on itself.";
+Constant MSG_PUTON_ITSELF "Du kan ikke lægge noget oven på sig selv.";
 #Endif;
 #Ifndef MSG_ATTACK_DEFAULT;
-Constant MSG_ATTACK_DEFAULT "Violence isn't the answer to this one.";
+Constant MSG_ATTACK_DEFAULT "Vold er ikke løsningen her.";
 #Endif;
 #Ifndef MSG_FILL_NO_WATER;
-Constant MSG_FILL_NO_WATER "But there's no water here to carry.";
+Constant MSG_FILL_NO_WATER "Men der er intet vand her.";
 #EndIf;
 #Ifndef MSG_DIG_NO_USE;
-Constant MSG_DIG_NO_USE "Digging would achieve nothing here.";
+Constant MSG_DIG_NO_USE "Det har ikke noget formål at grave her.";
 #EndIf;
 #Ifndef MSG_WAIT_DEFAULT;
-Constant MSG_WAIT_DEFAULT "Nothing happens.";
+Constant MSG_WAIT_DEFAULT "Der sker intet.";
 #EndIf;
 #Ifndef MSG_TOUCH_DEFAULT;
-Constant MSG_TOUCH_DEFAULT "You don't feel anything unexpected.";
+Constant MSG_TOUCH_DEFAULT "Du føler intet uventet.";
 #EndIf;
 #Ifndef MSG_PUSHDIR_DEFAULT;
-Constant MSG_PUSHDIR_DEFAULT "Is that the best you can think of?";
+Constant MSG_PUSHDIR_DEFAULT "Er det det bedste du kan komme på?";
 #EndIf;
 #Ifndef MSG_JUMP;
-Constant MSG_JUMP "You jump on the spot, fruitlessly.";
+Constant MSG_JUMP "Du hopper lidt på stedet.";
 #EndIf;
 #Ifndef MSG_REMOVE_DEFAULT;
-Constant MSG_REMOVE_DEFAULT "Removed.";
+Constant MSG_REMOVE_DEFAULT "Fjernet.";
 #EndIf;
 #Ifndef MSG_SEARCH_NOTHING_SPECIAL;
-Constant MSG_SEARCH_NOTHING_SPECIAL "You find nothing special.";
+Constant MSG_SEARCH_NOTHING_SPECIAL "Du finder ingenting af interesse.";
 #EndIf;
 #Ifndef MSG_PARSER_ONLY_TO_ANIMATE;
-Constant MSG_PARSER_ONLY_TO_ANIMATE "You can only do that to something animate.";
+Constant MSG_PARSER_ONLY_TO_ANIMATE "Det giver mest mening med noget levende.";
 #EndIf;
 #Ifndef MSG_PARSER_NOT_MULTIPLE_VERB;
-Constant MSG_PARSER_NOT_MULTIPLE_VERB "You can't use multiple objects with that verb.";
+Constant MSG_PARSER_NOT_MULTIPLE_VERB "Du kan ikke bruge det verbum på flere ting.";
 #EndIf;
 #Ifndef MSG_PARSER_NOT_MULTIPLE_DIRS;
-Constant MSG_PARSER_NOT_MULTIPLE_DIRS "You can't use multiple directions.";
+Constant MSG_PARSER_NOT_MULTIPLE_DIRS "Du kan ikke bruge flere retninger.";
 #EndIf;
 #Ifndef MSG_PARSER_BAD_NUMBER;
-Constant MSG_PARSER_BAD_NUMBER "I didn't understand that number.";
+Constant MSG_PARSER_BAD_NUMBER "Jeg forstod ikke det tal.";
 #EndIf;
 #Ifndef MSG_PARSER_NO_INPUT;
-Constant MSG_PARSER_NO_INPUT "Come again?";
+Constant MSG_PARSER_NO_INPUT "Undskyld mig?";
 #EndIf;
 #Ifndef MSG_PARSER_UNKNOWN_SENTENCE;
-Constant MSG_PARSER_UNKNOWN_SENTENCE "I don't understand that sentence.";
+Constant MSG_PARSER_UNKNOWN_SENTENCE "Jeg forstod ikke den sætning.";
 #EndIf;
 #Ifndef MSG_PARSER_UNKNOWN_VERB;
-Constant MSG_PARSER_UNKNOWN_VERB "That is not a verb I recognize.";
+Constant MSG_PARSER_UNKNOWN_VERB "Det verbum kender jeg ikke.";
 #EndIf;
 #Ifndef MSG_PARSER_CANT_DISAMBIGUATE;
-Constant MSG_PARSER_CANT_DISAMBIGUATE "I still don't understand what you are referring to.";
+Constant MSG_PARSER_CANT_DISAMBIGUATE "Jeg forstår stadig ikke, hvad du henviser til.";
 #EndIf;
 #Ifndef MSG_PARSER_UNKNOWN_PERSON;
-Constant MSG_PARSER_UNKNOWN_PERSON "I can't see who you are referring to.";
+Constant MSG_PARSER_UNKNOWN_PERSON "Jeg kan ikke se, hvem du henviser til.";
 #EndIf;
 #Ifndef MSG_PARSER_NOSUCHTHING;
-Constant MSG_PARSER_NOSUCHTHING "You can't see any such thing.";
+Constant MSG_PARSER_NOSUCHTHING "Du kan ikke se sådan en ting.";
 #EndIf;
 #Ifndef MSG_PARSER_CANT_OOPS;
-Constant MSG_PARSER_CANT_OOPS "Sorry, that can't be corrected.";
+Constant MSG_PARSER_CANT_OOPS "Undskyld, men det kan ikke rettes.";
 #EndIf;
 #Ifndef MSG_PARSER_COMPLEX_AGAIN;
-Constant MSG_PARSER_COMPLEX_AGAIN "The 'again' command must be on a new input line.^";
+Constant MSG_PARSER_COMPLEX_AGAIN "'Igen'-kommandoen må gives på en ny linje.^";
 #EndIf;
 #Ifndef MSG_PARSER_NOTHING_TO_AGAIN;
-Constant MSG_PARSER_NOTHING_TO_AGAIN "You can hardly repeat that.";
+Constant MSG_PARSER_NOTHING_TO_AGAIN "Det kan du næppe gentage.";
 #EndIf;
 #Ifndef MSG_PARSER_BE_MORE_SPECIFIC;
-Constant MSG_PARSER_BE_MORE_SPECIFIC "You need to be more specific.";
+Constant MSG_PARSER_BE_MORE_SPECIFIC "Du må være mere specifik.";
 #EndIf;
 
 #IfDef OPTIONAL_FULL_SCORE;
 #IfDef OPTIONAL_SCORED;
 #Ifndef MSG_FULLSCORE_OBJECTS;
-Constant MSG_FULLSCORE_OBJECTS "finding sundry items";
+Constant MSG_FULLSCORE_OBJECTS "finder forskellige ting";
 #EndIf;
 #Ifndef MSG_FULLSCORE_ROOMS;
-Constant MSG_FULLSCORE_ROOMS "visiting various places";
+Constant MSG_FULLSCORE_ROOMS "besøger forskellige steder";
 #EndIf;
 #EndIf;
 #Ifndef MSG_FULLSCORE_ACTIONS;
-Constant MSG_FULLSCORE_ACTIONS "performing noteworthy actions";
+Constant MSG_FULLSCORE_ACTIONS "udfører bemærkelsesværdige handlinger";
 #EndIf;
 #EndIf;
 
@@ -309,81 +309,81 @@ Default MSG_PARSER_CANT_SEE_IT = 144;
 
 #IfDef OPTIONAL_PROVIDE_UNDO_FINAL;
 #Ifndef MSG_UNDO_NOTHING_DONE;
-Constant MSG_UNDO_NOTHING_DONE "[You can't ~undo~ what hasn't been done!]";
+Constant MSG_UNDO_NOTHING_DONE "[Du kan ikke ~fortryde~ noget, som ikke er blevet gjort!]";
 #EndIf;
 #Ifndef MSG_UNDO_NOT_PROVIDED;
-Constant MSG_UNDO_NOT_PROVIDED "[Your interpreter does not provide ~undo~.]";
+Constant MSG_UNDO_NOT_PROVIDED "[Din fortolker understøtter ikke ~fortryd~.]";
 #EndIf;
 #Ifndef MSG_UNDO_FAILED;
-Constant MSG_UNDO_FAILED "~Undo~ failed.";
+Constant MSG_UNDO_FAILED "~Fortryd~ mislykkedes.";
 #EndIf;
 #Ifndef MSG_UNDO_DONE;
-Constant MSG_UNDO_DONE "Previous turn undone.";
+Constant MSG_UNDO_DONE "Forrige træk er fortrudt.";
 #EndIf;
 #EndIf;
 
 
 #IfDef OPTIONAL_EXTENDED_VERBSET;
 #Ifndef MSG_BURN_DEFAULT;
-Constant MSG_BURN_DEFAULT "This dangerous act would achieve little.";
+Constant MSG_BURN_DEFAULT "Denne farlige handling ville udrette meget lidt.";
 #EndIf;
 #Ifndef MSG_BUY_DEFAULT;
-Constant MSG_BUY_DEFAULT "Nothing is on sale.";
+Constant MSG_BUY_DEFAULT "Intet er til salg.";
 #EndIf;
 #Ifndef MSG_EMPTY_WOULDNT_ACHIEVE;
-Constant MSG_EMPTY_WOULDNT_ACHIEVE "That would scarcely empty anything.";
+Constant MSG_EMPTY_WOULDNT_ACHIEVE "Det ville næppe tømme noget.";
 #EndIf;
 #Ifndef MSG_RHETORICAL_QUESTION;
-Constant MSG_RHETORICAL_QUESTION "That was a rhetorical question.";
+Constant MSG_RHETORICAL_QUESTION "Det var et retorisk spørsmål.";
 #EndIf;
 #Ifndef MSG_PRAY_DEFAULT;
-Constant MSG_PRAY_DEFAULT "Nothing practical results from your prayer.";
+Constant MSG_PRAY_DEFAULT "Intet håndgribeligt kommer ud af din bøn.";
 #EndIf;
 #Ifndef MSG_SING_DEFAULT;
-Constant MSG_SING_DEFAULT "Your singing is abominable.";
+Constant MSG_SING_DEFAULT "Du har ikke meget af en sangstemme.";
 #EndIf;
 #Ifndef MSG_SLEEP_DEFAULT;
-Constant MSG_SLEEP_DEFAULT "You aren't feeling especially drowsy.";
+Constant MSG_SLEEP_DEFAULT "Du føler dig ikke særlig søvnig.";
 #EndIf;
 #Ifndef MSG_SORRY_DEFAULT;
-Constant MSG_SORRY_DEFAULT "Oh, don't apologize.";
+Constant MSG_SORRY_DEFAULT "Åh, du behøver ikke at undskylde.";
 #EndIf;
 #Ifndef MSG_SQUEEZE_YOURSELF;
-Constant MSG_SQUEEZE_YOURSELF "Keep your hands to yourself.";
+Constant MSG_SQUEEZE_YOURSELF "Hold dine hænder for dig selv.";
 #EndIf;
 
 #Ifndef MSG_SWIM_DEFAULT;
-Constant MSG_SWIM_DEFAULT "There's not enough water to swim in.";
+Constant MSG_SWIM_DEFAULT "Der er ikke nok vand at svømme i.";
 #EndIf;
 #Ifndef MSG_SWING_DEFAULT;
-Constant MSG_SWING_DEFAULT "There's nothing sensible to swing here.";
+Constant MSG_SWING_DEFAULT "Der er ikke noget fornuftigt at svinge her.";
 #EndIf;
 #Ifndef MSG_TASTE_DEFAULT;
-Constant MSG_TASTE_DEFAULT "You taste nothing unexpected.";
+Constant MSG_TASTE_DEFAULT "Du smager intet uventet.";
 #EndIf;
 #Ifndef MSG_THINK_DEFAULT;
-Constant MSG_THINK_DEFAULT "What a good idea.";
+Constant MSG_THINK_DEFAULT "God idé.";
 #EndIf;
 #Ifndef MSG_WAVEHANDS_DEFAULT;
-Constant MSG_WAVEHANDS_DEFAULT "You wave, feeling foolish.";
+Constant MSG_WAVEHANDS_DEFAULT "Du vinker og føler dig lidt tåbelig.";
 #EndIf;
 #Ifndef MSG_WAKE_DEFAULT;
-Constant MSG_WAKE_DEFAULT "The dreadful truth is, this is not a dream.";
+Constant MSG_WAKE_DEFAULT "Den frygtelige sandhed er, at dette ikke er en drøm.";
 #Endif;
 #Ifndef MSG_WAKEOTHER_DEFAULT;
-Constant MSG_WAKEOTHER_DEFAULT "That seems unnecessary.";
+Constant MSG_WAKEOTHER_DEFAULT "Det virker unødvendigt.";
 #Endif;
 #Ifndef MSG_KISS_PLAYER;
-Constant MSG_KISS_PLAYER "If you think that'll help.";
+Constant MSG_KISS_PLAYER "Hvis du tror, det vil hjælpe.";
 #Endif;
 #Ifndef MSG_KISS_DEFAULT;
-Constant MSG_KISS_DEFAULT "Keep your mind on the game.";
+Constant MSG_KISS_DEFAULT "Fokuser i stedet på spillet.";
 #Endif;
 #Ifndef MSG_MILD_DEFAULT;
-Constant MSG_MILD_DEFAULT "Quite.";
+Constant MSG_MILD_DEFAULT "Så er det nok.";
 #EndIf;
 #Ifndef MSG_STRONG_DEFAULT;
-Constant MSG_STRONG_DEFAULT "Real adventurers do not use such language.";
+Constant MSG_STRONG_DEFAULT "Ægte eventyrere taler ikke sådan.";
 #EndIf;
 
 Default MSG_BLOW_DEFAULT 200;
@@ -646,25 +646,25 @@ Constant SKIP_MSG_EXAMINE_DARK;
 	switch(p_msg) {
 #Iftrue MSG_TAKE_SCENERY < 1000;
 	MSG_TAKE_SCENERY:
-		print_ret (CTheyreorThats) noun, " hardly portable.";
+		print_ret (CTheyreorThats) noun, " næppe bærbar.";
 #EndIf;
 #Ifndef SKIP_MSG_PUSH_DEFAULT;
 	MSG_PUSH_DEFAULT, MSG_PULL_DEFAULT, MSG_TURN_DEFAULT:
-		"Nothing obvious happens.";
+		"Der sker intet åbenlyst.";
 #Endif;
 #Ifndef SKIP_MSG_PUSH_STATIC;
 	MSG_PUSH_STATIC, MSG_PULL_STATIC, MSG_TURN_STATIC, MSG_TAKE_STATIC:
-		print_ret (CTheyreorThats) noun, " fixed in place.";
+		print_ret (CTheyreorThats) noun, " sidder fast.";
 #Endif;
 #Ifndef SKIP_MSG_PUSH_SCENERY;
 	MSG_PUSH_SCENERY, MSG_PULL_SCENERY, MSG_TURN_SCENERY:
-		"What a concept!";
+		"Hvilket koncept!";
 #Endif;
 #IfDef SACK_OBJECT;
 #IfTrue MSG_SACK_PUTTING < 1000;
 	MSG_SACK_PUTTING:
 	! p_arg_1 = the object being put into SACK_OBJECT.
-		"(putting ", (the) p_arg_1, " into ", (the) SACK_OBJECT, " to make room)";
+		"(putting ", (the) p_arg_1, " i ", (the) SACK_OBJECT, " for at gøre plads)";
 #EndIf;
 #EndIf;
 #IfTrue MSG_PROMPT < 1000;
@@ -676,9 +676,9 @@ Constant SKIP_MSG_EXAMINE_DARK;
 	MSG_INVENTORY_DEFAULT:
 		! return true if something listed to run afterroutines
 		! or false if MSG_INVENTORY_EMPTY should be displayed
-		p_arg_1 = "You're carrying ";
+		p_arg_1 = "Du har ";
 		if(inventory_style == 0) {
-			p_arg_1 = "You're carrying:";
+			p_arg_1 = "Du har:";
 			p_arg_2 = NEWLINE_BIT;
 		}
 		if(PrintContents(p_arg_1, player, p_arg_2)) {
@@ -689,55 +689,55 @@ Constant SKIP_MSG_EXAMINE_DARK;
 #EndIf;
 #IfTrue MSG_EXAMINE_NOTHING_SPECIAL < 1000;
 	MSG_EXAMINE_NOTHING_SPECIAL:
-		"There is nothing special about ", (the) noun, ".";
+		"Der er ikke noget særligt ved ", (the) noun, ".";
 #EndIf;
 #Ifndef SKIP_MSG_PUSH_ANIMATE;
 	MSG_PUSH_ANIMATE, MSG_PULL_ANIMATE, MSG_TURN_ANIMATE, MSG_CLIMB_ANIMATE:
-		"That would be less than courteous.";
+		"Det ville være knapt så høfligt.";
 #Endif;
 #Ifndef SKIP_MSG_DROP_NOT_HOLDING;
 	MSG_DROP_NOT_HOLDING, MSG_SHOW_NOT_HOLDING, MSG_GIVE_NOT_HOLDING,
 	MSG_WEAR_NOT_HOLDING:
-		"You aren't holding ", (ItorThem) noun, ".";
+		"Du har ", (ItorThem) noun, " ikke.";
 #Endif;
 #Ifndef SKIP_MSG_OPEN_YOU_CANT;
 	MSG_OPEN_YOU_CANT, MSG_CLOSE_YOU_CANT, MSG_ENTER_YOU_CANT,
 	MSG_LOCK_NOT_A_LOCK, MSG_UNLOCK_NOT_A_LOCK, MSG_WEAR_NOT_CLOTHING:
 	! p_arg_1 = the base verb for this action ('open', 'close' etc).
-		"You can't ", (verbname) p_arg_1, " ", (ThatorThose) noun, ".";
+		"Du kan ikke ", (verbname) p_arg_1, " ", (ThatorThose) noun, ".";
 #Endif;
 #IfTrue MSG_EAT_INEDIBLE < 1000;
 	MSG_EAT_INEDIBLE:
-		print_ret (CTheyreorThats) noun, " plainly inedible.";
+		print_ret (CTheyreorThats) noun, " helt klart uspiselig.";
 #EndIf;
 #IfTrue MSG_OPEN_ALREADY < 1000;
 	MSG_OPEN_ALREADY:
-		print_ret (CTheyreorIts) noun, " already open.";
+		print_ret (CTheyreorIts) noun, " allerede åben.";
 #EndIf;
 #IfTrue MSG_OPEN_LOCKED < 1000;
 	MSG_OPEN_LOCKED:
-		print_ret (CTheyreorIts) noun, " locked.";
+		print_ret (CTheyreorIts) noun, " låst.";
 #EndIf;
 #IfTrue MSG_PUTON_NOT_SUPPORTER < 1000;
 	MSG_PUTON_NOT_SUPPORTER:
-		"You can't put things on top of ", (ThatorThose) second, ".";
+		"Du kan ikke putter ting oven på ", (ThatorThose) second, ".";
 #EndIf;
 #Ifndef SKIP_MSG_TAKE_ANIMATE;
 	MSG_TAKE_ANIMATE, MSG_EAT_ANIMATE:
-		"I don't suppose ", (the) noun, " would care for that.";
+		"Jeg formoder ikke at ", (the) noun, " vil synes om det.";
 #Endif;
 #Ifndef SKIP_MSG_TAKE_PLAYER_PARENT;
 	MSG_TAKE_PLAYER_PARENT, MSG_GO_FIRST_LEAVE, MSG_EXIT_FIRST_LEAVE:
 	! p_arg_1 = the object the player has to leave to perform the action.
-		"First, you'd have to leave ", (the) p_arg_1, ".";
+		"Først må du forlade ", (the) p_arg_1, ".";
 #Endif;
 #Iftrue MSG_OPEN_DEFAULT < 1000;
 	MSG_OPEN_DEFAULT:
-		print "You open ", (the) noun;
+		print "Du åbner ", (the) noun;
 		if(noun has container && noun hasnt transparent &&
 				~~IndirectlyContains(noun, player)) {
-			print ", revealing ";
-			if(PrintContents(0, noun)==false) print "nothing";
+			print ", og finder ";
+			if(PrintContents(0, noun)==false) print "intet";
 		}
 		".";
 #Endif;
@@ -751,105 +751,105 @@ Constant SKIP_MSG_EXAMINE_DARK;
 	MSG_CLOSE_DEFAULT, MSG_ENTER_DEFAULT, MSG_LOCK_DEFAULT,
 	MSG_UNLOCK_DEFAULT, MSG_EXIT_DEFAULT:
 	! p_arg_1 = the base verb for this action ('open', 'close' etc).
-		"You ", (verbname) p_arg_1, " ", (the) noun, ".";
+		"Du ", (verbname) p_arg_1, " ", (the) noun, ".";
 #Endif;
 #Ifndef SKIP_MSG_GIVE_DEFAULT;
 	MSG_GIVE_DEFAULT, MSG_SHOW_DEFAULT:
-		print_ret (The) second, " doesn't seem interested.";
+		print_ret (The) second, " virker ikke interesseret.";
 #Endif;
 #Ifndef SKIP_MSG_ASKFOR_DEFAULT;
 	MSG_ASKFOR_DEFAULT, MSG_ASKTO_DEFAULT, MSG_ORDERS_WONT:
 	! p_arg_1 = the actor which the player has asked to do something.
-		print_ret (The) p_arg_1, " has better things to do.";
+		print_ret (The) p_arg_1, " har bedre ting at tage sig til.";
 #Endif;
 #Ifndef SKIP_MSG_ENTER_NOT_OPEN;
 	MSG_ENTER_NOT_OPEN, MSG_EXIT_NOT_OPEN, MSG_INSERT_NOT_OPEN,
 	MSG_GO_DOOR_CLOSED, MSG_EMPTY_IS_CLOSED, MSG_REMOVE_CLOSED:
 	! p_arg_1 = the object which is closed, thus blocking the player's action.
-		"You can't, since ", (the) p_arg_1, " ", (isorare) p_arg_1, " closed.";
+		"Det kan du ikke, fordi ", (the) p_arg_1, " ", (isorare) p_arg_1, " lukket.";
 #Endif;
 #Ifndef SKIP_MSG_GIVE_PLAYER;
 	MSG_GIVE_PLAYER, MSG_TAKE_ALREADY_HAVE:
-		"You already have ", (ItorThem) noun, ".";
+		"Du har allerede ", (ItorThem) noun, ".";
 #Endif;
 #Ifndef SKIP_MSG_SAVE_FAILED;
 	MSG_SAVE_FAILED, MSG_RESTORE_FAILED, MSG_RESTART_FAILED:
-		"Failed ", (verbname) verb_word, ".";
+		"Kommandoen mislykkedes ", (verbname) verb_word, ".";
 #Endif;
 #Ifndef SKIP_MSG_INSERT_ALREADY;
 	MSG_INSERT_ALREADY, MSG_PUTON_ALREADY, MSG_TRANSFER_ALREADY:
-		"Already there.";
+		"Er der allerede.";
 #Endif;
 #Ifndef SKIP_MSG_INSERT_ANIMATE;
 	MSG_INSERT_ANIMATE, MSG_PUTON_ANIMATE:
-		"Try giving ",(ItorThem) noun," instead.";
+		"Prøv at give ",(ItorThem) noun," i stedet for.";
 #Endif;
 #Ifndef SKIP_MSG_INSERT_NO_ROOM;
 	MSG_INSERT_NO_ROOM, MSG_PUTON_NO_ROOM:
-		"There is no more room.";
+		"Der er ikke mere plads.";
 #Endif;
 #IfTrue MSG_INSERT_DEFAULT < 1000;
 	MSG_INSERT_DEFAULT:
-		"You put ", (the) noun, " into ", (the) second, ".";
+		"Du placerer ", (the) noun, " i ", (the) second, ".";
 #EndIf;
 #IfTrue MSG_PUTON_DEFAULT < 1000;
 	MSG_PUTON_DEFAULT:
-		"You put ", (the) noun, " on ", (the) second, ".";
+		"Du placerer ", (the) noun, " på ", (the) second, ".";
 #EndIf;
 #Ifndef SKIP_MSG_ASK_DEFAULT;
 	MSG_ASK_DEFAULT, MSG_ANSWER_DEFAULT, MSG_SHOUT_DEFAULT, MSG_SHOUTAT_DEFAULT:
-		"There is no reply.";
+		"Der er intet svar.";
 #Endif;
 #IfTrue MSG_WEAR_ALREADY_WORN < 1000;
 	MSG_WEAR_ALREADY_WORN:
-		"You are already wearing ", (ItorThem) noun, ".";
+		"Du har ", (ItorThem) noun, " allerede på.";
 #EndIf;
 #IfTrue MSG_WEAR_DEFAULT < 1000;
 	MSG_WEAR_DEFAULT:
-		"You are now wearing ", (the) noun, ".";
+		"Du har nu ", (the) noun, " på.";
 #EndIf;
 #IfTrue MSG_DISROBE_NOT_WEARING < 1000;
 	MSG_DISROBE_NOT_WEARING:
-		"You're not wearing ", (the) noun, ".";
+		"Du har ikke ", (the) noun, " på.";
 #EndIf;
 #IfTrue MSG_DISROBE_DEFAULT < 1000;
 	MSG_DISROBE_DEFAULT:
-		"You take off ", (the) noun, ".";
+		"Du taget ", (the) noun, " af.";
 #EndIf;
 #Ifndef SKIP_MSG_SWITCH_ON_NOT_SWITCHABL;
 	MSG_SWITCH_ON_NOT_SWITCHABLE, MSG_SWITCH_OFF_NOT_SWITCHABLE:
-		print_ret (CTheyreorThats) noun, " not something you can switch.";
+		print_ret (CTheyreorThats) noun, " ikke noget som kan tænde eller slukke.";
 #Endif;
 #Ifndef SKIP_MSG_SWITCH_ON_ON;
 	MSG_SWITCH_ON_ON, MSG_SWITCH_OFF_NOT_ON:
-		print_ret (CTheyreorThats) noun, " already ", (OnOff) noun, ".";
+		print_ret (CTheyreorThats) noun, " allerede ", (OnOff) noun, ".";
 #Endif;
 #Ifndef SKIP_MSG_SWITCH_ON_DEFAULT;
 	MSG_SWITCH_ON_DEFAULT, MSG_SWITCH_OFF_DEFAULT:
-		"You switch ", (the) noun, " ", (OnOff) noun, ".";
+		"Du slår ", (the) noun, " ", (OnOff) noun, ".";
 #Endif;
 #Iftrue MSG_AUTO_TAKE < 1000;
 	MSG_AUTO_TAKE:
 	! p_arg_1 = the object the player automatically picks up
-	print "(first taking ", (the) p_arg_1, ")^";
+	print "(taget først ", (the) p_arg_1, ")^";
 #Endif;
 #Iftrue MSG_AUTO_DISROBE < 1000;
 	MSG_AUTO_DISROBE:
 	! p_arg_1 = the object the player automatically takes off.
-		print "(first taking off ", (the) p_arg_1, ")^";
+		print "(tager først ", (the) p_arg_1, " af)^";
 #Endif;
 #Iftrue MSG_AUTO_DISROBE_WORN < 1000;
 	MSG_AUTO_DISROBE_WORN:
 	! p_arg_1 = the object the player would need to take off.
-		print "But you would need to take off ", (the) p_arg_1, " first.^";
+		print "Men du må først tage ", (the) p_arg_1, " af.^";
 #Endif;
 #IfTrue MSG_PARSER_NOTHING_TO_VERB < 1000;
 	MSG_PARSER_NOTHING_TO_VERB:
 	! p_arg_1 = the last word in player input + 1.
 		if(action == ##Drop or ##Insert && (parse + 2 + (p_arg_1 - 2) *4)-->0 == ALL_WORD) {
-			"You are not carrying anything.";
+			"Du holder ingenting.";
 		}  else {
-			print "There are no things available that match ~";
+			print "Der er ikke nogle ting, som matcher ~";
 			_PrintPartialMatch(verb_wordnum, p_arg_1 - 1);
 			"~.";
 		}
@@ -858,257 +858,254 @@ Constant SKIP_MSG_EXAMINE_DARK;
 	MSG_PARSER_NOT_HOLDING, MSG_AUTO_TAKE_NOT_HELD, MSG_WAVE_NOTHOLDING:
 	! p_arg_1 = the object which the player must be holding to perform the
 	! action but isn't.
-		print_ret "But you are not holding ", (the) p_arg_1, ".";
+		print_ret "Men du holder ikke ", (the) p_arg_1, ".";
 #Endif;
 #IfTrue MSG_PARSER_PARTIAL_MATCH < 1000;
 	MSG_PARSER_PARTIAL_MATCH:
 	! p_arg_1 = the word number of the last word understood + 1.
-		print "I only understood you as far as ~";
+		print "Jeg forstod dig kun indtil ~";
 		_PrintPartialMatch(verb_wordnum, p_arg_1);
-		"~ but then you lost me.";
+		"~ men herefter tabte du mig.";
 #EndIf;
 #IfTrue MSG_PARSER_CANT_TALK < 1000;
 	MSG_PARSER_CANT_TALK:
 	! p_arg_1 = the object which can't be talked to.
-		print_ret "You can't talk to ", (the) p_arg_1, ".";
+		print_ret "Du kan ikke tale med ", (the) p_arg_1, ".";
 #EndIf;
 #IfTrue MSG_PARSER_NO_NEED_REFER_TO < 1000;
 	MSG_PARSER_NO_NEED_REFER_TO:
-		print "You don't need to refer to ~";
+		print "Du behøves ikke at referede til ~";
 		_PrintUnknownWord();
-		print_ret "~ in this game.";
+		print_ret "~ i dette spil.";
 #EndIf;
 #IfTrue MSG_PARSER_DONT_UNDERSTAND_WORD < 1000;
 	MSG_PARSER_DONT_UNDERSTAND_WORD:
-			print "Sorry, I don't understand what ~";
+			print "Undskyld, jeg forstår ikke hvad ~";
 			_PrintUnknownWord();
-			print_ret "~ means.";
+			print_ret "~ betyder.";
 #EndIf;
 #IfTrue MSG_PARSER_BAD_PATTERN_PREFIX < 1000;
 	MSG_PARSER_BAD_PATTERN_PREFIX:
-		print "I think you wanted to say ~";
+		print "Jeg tror, du ville sige ~";
 		rtrue;
 #EndIf;
 #IfTrue MSG_PARSER_BAD_PATTERN_SUFFIX < 1000;
 	MSG_PARSER_BAD_PATTERN_SUFFIX:
-		"~. Please try again.";
+		"~. Prøv venligst igen.";
 #EndIf;
 #IfTrue MSG_PARSER_NO_IT < 1000;
 	MSG_PARSER_NO_IT:
-		"I don't know what ~",(address) p_arg_1, "~ refers to.";
+		"Jeg ved ikke hvad ~",(address) p_arg_1, "~ refererer til.";
 #EndIf;
 #IfTrue MSG_PARSER_CANT_SEE_IT < 1000;
 	MSG_PARSER_CANT_SEE_IT:
-		"You can't see ~",(address) p_arg_1, "~ (", (name) p_arg_2, ") at the moment.";
+		"Du kan ikke se ~",(address) p_arg_1, "~ (", (name) p_arg_2, ") i øjeblikket.";
 #EndIf;
 #Ifndef SKIP_MSG_CLOSE_NOT_OPEN;
 	MSG_CLOSE_NOT_OPEN, MSG_TOUCHABLE_FOUND_CLOSED,
 	MSG_PARSER_CONTAINER_ISNT_OPEN:
 	! p_arg_1 = the object which isn't open.
-		print_ret (CObjIs) p_arg_1, "n't open.";
+		print_ret (CObjIs) p_arg_1, " er ikke åben.";
 #Endif;
 #IfTrue MSG_CONSULT_NOTHING_INTERESTING < 1000;
 	MSG_CONSULT_NOTHING_INTERESTING:
-		"You discover nothing of interest in ", (the) noun, ".";
+		"Du finder intet af interesse i ", (the) noun, ".";
 #EndIf;
 #Ifndef SKIP_MSG_CUT_NO_USE;
 	MSG_CUT_NO_USE, MSG_JUMP_OVER, MSG_TIE_DEFAULT, MSG_CLIMB_DEFAULT:
-		"You would achieve nothing by this.";
+		"Du ville opnå intet ved det.";
 #Endif;
 #Ifndef SKIP_MSG_LOCK_ALREADY_LOCKED;
 	MSG_LOCK_ALREADY_LOCKED, MSG_UNLOCK_ALREADY_UNLOCKED:
 	! p_arg_1 = the base verb for this action ('open', 'close' etc).
-		print_ret (CObjIs) noun, " already ", (verbname) p_arg_1, "ed.";
+		print_ret (CObjIs) noun, " allerede låst.";
 #Endif;
 #IfTrue MSG_LOCK_CLOSE_FIRST < 1000;
 	MSG_LOCK_CLOSE_FIRST:
-		"First you'd have to close ", (the) noun, ".";
+		"Først må du lukke ", (the) noun, ".";
 #EndIf;
 #Ifndef SKIP_MSG_LOCK_KEY_DOESNT_FIT;
 	MSG_LOCK_KEY_DOESNT_FIT, MSG_UNLOCK_KEY_DOESNT_FIT:
-		print_ret (The) second, " doesn't seem to fit the lock.";
+		print_ret (The) second, " passer ikke i låsen.";
 #Endif;
 #IfTrue MSG_EXAMINE_CLOSED < 1000;
 	MSG_EXAMINE_CLOSED:
 	! p_arg_1 = the examines object (which is closed).
-		print_ret (The) p_arg_1, " ", (isorare) p_arg_1, " closed.";
+		print_ret (The) p_arg_1, " ", (isorare) p_arg_1, " lukket.";
 #Endif;
 #IfTrue MSG_REMOVE_NOT_HERE < 1000;
 	MSG_REMOVE_NOT_HERE:
-		"But ", (the) noun, " isn't there now.";
+		"Men ", (the) noun, " er der ikke nu.";
 #EndIf;
 #IfTrue MSG_SEARCH_IN_IT_ISARE < 1000;
 	MSG_SEARCH_IN_IT_ISARE:
-		print (The) noun, " contains ";
+		print (The) noun, " indeholder ";
 		PrintContents(0, noun);
 		".";
 #EndIf;
 #IfTrue MSG_SEARCH_ON_IT_ISARE < 1000;
 	MSG_SEARCH_ON_IT_ISARE:
-		print "On ", (the) noun;
+		print "På ", (the) noun;
 		PrintContents(" ", noun, ISARE_BIT);
 		".";
 #EndIf;
 #IfTrue MSG_SEARCH_EMPTY < 1000;
 	MSG_SEARCH_EMPTY:
-		print_ret (CObjIs) noun, " empty.";
+		print_ret (CObjIs) noun, " tom.";
 #EndIf;
 #IfTrue MSG_SEARCH_NOTHING_ON < 1000;
 	MSG_SEARCH_NOTHING_ON:
-		"There is nothing on ", (the) noun, ".";
+		"Der er ingenting på ", (the) noun, ".";
 #EndIf;
 #IfTrue MSG_SEARCH_CANT_SEE_CLOSED < 1000;
 	MSG_SEARCH_CANT_SEE_CLOSED:
-		"You can't see inside, since ", (the) noun, " ", (IsorAre) noun, " closed.";
+		"Du kan ikke se ind, fordi ", (the) noun, " ", (IsorAre) noun, " lukket.";
 #EndIf;
 #IfTrue MSG_EXAMINE_ONOFF < 1000;
 	MSG_EXAMINE_ONOFF:
-		print_ret (The) noun, " ", (IsOrAre) noun, " currently switched ", (onoff) noun, ".";
+		print_ret (The) noun, " ", (IsOrAre) noun, " lige nu indstillet ", (onoff) noun, ".";
 #EndIf;
 #IfTrue MSG_EAT_DEFAULT < 1000;
 	MSG_EAT_DEFAULT:
-		"You eat ", (the) noun, ". Not bad.";
+		"Du spiser ", (the) noun, ". Ikke dårligt.";
 #EndIf;
 #Ifndef SKIP_MSG_RUB_DEFAULT;
 MSG_RUB_DEFAULT, MSG_SQUEEZE_DEFAULT:
-	"You achieve nothing by this.";
+	"Du opnår intet ved det.";
 #Endif;
 #IfTrue MSG_TAKE_NOT_AVAILABLE < 1000;
 	MSG_TAKE_NOT_AVAILABLE:
-		print_ret (CObjIs) noun, " not available.";
+		print_ret (CObjIs) noun, " ikke tilgængelig.";
 #EndIf;
 #IfTrue MSG_TAKE_BELONGS < 1000;
 	MSG_TAKE_BELONGS:
 		! p_arg_1 = the object that is held by p_arg_2
-		print_ret (The) p_arg_1, " seems to belong to ", (the) p_arg_2, ".";
+		print_ret (The) p_arg_1, " ser ud til at høre til ", (the) p_arg_2, ".";
 #EndIf;
 #IfTrue MSG_TAKE_PART_OF < 1000;
 	MSG_TAKE_PART_OF:
 		! p_arg_1 = the object that is part of p_arg_2
-		print_ret (The) p_arg_1, " seems to be part of ", (the) p_arg_2, ".";
+		print_ret (The) p_arg_1, " ser ud til at være en del af ", (the) p_arg_2, ".";
 #EndIf;
 #Ifndef OPTIONAL_NO_DARKNESS;
 #Ifndef SKIP_MSG_EXAMINE_DARK;
 	MSG_EXAMINE_DARK, MSG_SEARCH_DARK:
-		"But it's dark.";
+		"Men det er mørkt.";
 #Endif;
 #Endif;
 #Iftrue MSG_SCORE_DEFAULT < 1000;
 	MSG_SCORE_DEFAULT:
 #Ifdef NO_SCORE;
-		"There is no score in this game.";
+		"Der er ingen point i dette spil.";
 #Ifnot;
-		if (deadflag) print "In that game you"; else print "You have so far";
-		print " scored ", score, " out of a possible ", MAX_SCORE, ", in ", turns, " turn";
-		if(turns ~= 1) print "s";
+		if (deadflag) print "I dette spil fik du"; else print "Du har indtil nu";
+		print score, " ud af ", MAX_SCORE, ", mulige i ", turns, " træk";
 		rtrue;
 #Endif;
 #Endif;
 #IfDef OPTIONAL_FULL_SCORE;
 #IfTrue MSG_FULLSCORE_START < 1000;
 	MSG_FULLSCORE_START:
-		print "The score ";
-		if(deadflag) print "wa"; else print "i";
-		"s made up as follows:";
+		print "Scoren ";
+		if(deadflag) print "va"; else print "e";
+		"r opgjort således:";
 #EndIf;
 #IfTrue MSG_FULLSCORE_END < 1000;
 	MSG_FULLSCORE_END:
-		"total (out of ", MAX_SCORE, ")";
+		"total (ud af ", MAX_SCORE, ")";
 #EndIf;
 #EndIf;
 #Ifndef SKIP_MSG_LOOKMODE;
 	MSG_LOOKMODE_NORMAL, MSG_LOOKMODE_LONG, MSG_LOOKMODE_SHORT:
-		print "This game is now in its ";
+		print "Dette spil er nu i ";
 		if(lookmode==1) print "normal ~";
 		if(lookmode==2) print "~verbose";
 		else {
 			if(lookmode==3) print "~super";
 			print "brief";
 		}
-		print "~ mode, which ";
-		if(lookmode ~= 1) print "always ";
-		print "gives ";
-		if(lookmode == 3) print "short";
-		else print "long";
-		print " descriptions of locations ";
+		print "~ mode, som ";
+		if(lookmode ~= 1) print "altid ";
+		print "giver ";
+		if(lookmode == 3) print "korte";
+		else print "lange";
+		print " beskrivelser af steder ";
 		if(lookmode == 1)
-			"never before visited and short descriptions otherwise.";
-		print "(even if you";
-		if(lookmode == 2) print "'ve";
-		else print " haven't";
-		" been there before).";
+			",som ikke er besøgt før og ellers korte beskrivelser.";
+		print "(selvom du";
+		if(lookmode == 2) print "har";
+		else print " ikke har";
+		" været der før).";
 #Endif;
 #IfTrue MSG_RESTART_RESTORE_OR_QUIT < 1000;
 	MSG_RESTART_RESTORE_OR_QUIT:
-		print "^Would you like to RESTART, RESTORE";
+		print "^Du kan vælge: GENSTART, HENT et spil";
 #Ifdef OPTIONAL_PROVIDE_UNDO_FINAL;
 	#Ifdef DEATH_MENTION_UNDO;
 			if(((HDR_GAMEFLAGS->1) & 16) ~= 0)
-				print ", UNDO the last move";
+				print ", FORTRYD det seneste træk";
 	#Ifnot;
 			if(((HDR_GAMEFLAGS->1) & 16) ~= 0 && deadflag ~= GS_WIN)
-				print ", UNDO the last move";
+				print ", FORTRYD det seneste træk";
 	#Endif;
 #Endif;
 #IfDef OPTIONAL_FULL_SCORE;
-		print ", give the FULL score for that game";
+		print ", vis TOTAL information om din score";
 #EndIf;
-		if(deadflag == 2 && AMUSING_PROVIDED == 0) print ", see some suggestions for AMUSING things to do";
-		print " or QUIT? ";
+		if(deadflag == 2 && AMUSING_PROVIDED == 0) print ", se nogle foreslag til BONUS-ting at gøre";
+		print " eller AFSLUT? ";
 		rtrue;
 #EndIf;
 #IfTrue MSG_AREYOUSUREQUIT < 1000;
 	MSG_AREYOUSUREQUIT: ! print and rtrue to avoid newline
-		print "Are you sure you want to quit? ";
+		print "Er du sikker på, at du vil afslutte? ";
 		rtrue;
 #EndIf;
 #IfTrue MSG_YOU_HAVE_WON < 1000;
 	MSG_YOU_HAVE_WON: ! print and rtrue to avoid newline
- 		print "You have won";
+ 		print "Du har vundet";
  		rtrue;
 #EndIf;
 #IfTrue MSG_YOU_HAVE_DIED < 1000;
 	MSG_YOU_HAVE_DIED: ! print and rtrue to avoid newline
-		print "You have died";
+		print "Du er død";
 		rtrue;
 #EndIf;
 #IfTrue MSG_ENTER_BAD_LOCATION < 1000;
 	MSG_ENTER_BAD_LOCATION:
-		print "You have to ";
+		print "Du må ";
 		if(player notin location && ~~IndirectlyContains(parent(player), noun))
-			print "leave ", (the) parent(player);
+			print "forlade ", (the) parent(player);
 		else
-			print "enter ", (the) parent(noun);
-		" first.";
+			print "gå ind i ", (the) parent(noun);
+		" først.";
 #EndIf;
 #IfTrue MSG_INSERT_NOT_CONTAINER < 1000;
 	MSG_INSERT_NOT_CONTAINER:
 		! p_arg_1 = the object that can't contain things
-		print_ret (The) p_arg_1, " can't contain things.";
+		print_ret (The) p_arg_1, " kan ikke indeholde ting.";
 #Endif;
 #IfTrue MSG_YES_OR_NO < 1000;
 	MSG_YES_OR_NO:
-		print "Please answer yes or no: ";
+		print "Svar ja eller nej: ";
 #EndIf;
 #IfTrue MSG_RESTART_CONFIRM < 1000;
 	MSG_RESTART_CONFIRM:
-		print "Are you sure you want to restart? ";
+		print "Er du sikker på at du vil genstarte? ";
 #Endif;
 #Ifndef NO_SCORE;
 #Iftrue MSG_PARSER_NEW_SCORE < 1000;
 	MSG_PARSER_NEW_SCORE:
 		! p_arg_1 = the old score
-		print "^[The score has just gone ";
+		print "^[Scoren er gået ";
 		if(p_arg_1 < score) {
 			p_arg_2 = score - p_arg_1;
-			print "up";
+			print "op";
 		} else {
 			p_arg_2 = p_arg_1 - score;
-			print "down";
+			print "ned";
 		}
-		print " by ", p_arg_2, " point";
-		if(p_arg_2 > 1) print "s";
-		print ".]^";
+		print " med ", p_arg_2, " point.]^";
 #Endif;
 #Endif;
 
@@ -1118,24 +1115,24 @@ MSG_RUB_DEFAULT, MSG_SQUEEZE_DEFAULT:
 #IfDef OPTIONAL_EXTENDED_VERBSET;
 #IfTrue MSG_BLOW_DEFAULT < 1000;
 	MSG_BLOW_DEFAULT:
-		"You can't usefully blow ", (the) noun, ".";
+		"Det er meningsløst at blæse ", (the) noun, ".";
 #EndIf;
 #IfTrue MSG_EMPTY_ALREADY_EMPTY < 1000;
 	MSG_EMPTY_ALREADY_EMPTY:
 		! p_arg_1 = the object that is already empty
-		print_ret (The) p_arg_1, " ", (isorare) p_arg_1, " empty already.";
+		print_ret (The) p_arg_1, " ", (isorare) p_arg_1, " tom allerede.";
 #EndIf;
 #IfTrue MSG_SET_DEFAULT < 1000;
 	MSG_SET_DEFAULT:
-		"No, you can't set ", (thatorthose) noun, ".";
+		"Nej, du kan ikke sætte ", (thatorthose) noun, ".";
 #EndIf;
 #IfTrue MSG_SET_TO_DEFAULT < 1000;
 	MSG_SET_TO_DEFAULT:
-		"No, you can't set ", (thatorthose) noun, " to anything.";
+		"Nej, du kan ikke sætte ", (thatorthose) noun, " til noget som helst.";
 #EndIf;
 #IfTrue MSG_WAVE_DEFAULT < 1000;
 	MSG_WAVE_DEFAULT:
-		"You look ridiculous waving ", (the) noun, ".";
+		"Du ser fjollet ud, som du vifter med ", (the) noun, ".";
 #EndIf;
 #EndIf;
 
@@ -1146,17 +1143,17 @@ default:
 ];
 
 [ ThatorThose obj;
-	if (obj has pluralname) print "those"; else print "that";
+	if (obj has pluralname) print "dem"; else print "den";
 ];
 
 [ ItorThem obj;
-	if (obj == player) { print "yourself"; rtrue; }
-	if (obj has pluralname) { print "them"; rtrue; }
+	if (obj == player) { print "dig selv"; rtrue; }
+	if (obj has pluralname) { print "dem"; rtrue; }
 	if (obj has animate) {
-		if (obj has female) { print "her"; rtrue; }
-		if (obj hasnt neuter) { print "him"; rtrue; }
+		if (obj has female) { print "hende"; rtrue; }
+		if (obj hasnt neuter) { print "ham"; rtrue; }
 	}
-	print "it";
+	print "den";
 ];
 
 [ CObjIs p_obj;
@@ -1164,30 +1161,30 @@ default:
 ];
 
 [ IsorAre obj;
-	if (obj has pluralname || obj == player) print "are"; else print "is";
+	if (obj has pluralname || obj == player) print "er"; else print "er";
 ];
 
 [ CTheyreorThats obj;
-	if (obj == player)			 { print "You're"; return; }
-	if (obj has pluralname)		{ print "They're"; return; }
+	if (obj == player)			 { print "Du er"; return; }
+	if (obj has pluralname)		{ print "De er"; return; }
 	if (obj has animate) {
-		if (obj has female)		{ print "She's"; return; }
-		if (obj hasnt neuter) { print "He's"; return; }
+		if (obj has female)		{ print "Hun er"; return; }
+		if (obj hasnt neuter) { print "Han er"; return; }
 	}
-	print "That's";
+	print "Det er";
 ];
 
 [ CTheyreorIts p_obj;
 	if(p_obj ~= player && p_obj hasnt pluralname && p_obj hasnt animate) {
-		print "It's";
+		print "Det er";
 		return;
 	}
 	CTheyreorThats(p_obj);
 ];
 
 [OnOff obj;
-	if(obj has on) print "on";
-	else print "off";
+	if(obj has on) print "tændt";
+	else print "slukket";
 	return;
 ];
 
