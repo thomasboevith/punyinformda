@@ -102,10 +102,6 @@ Verb 'forlad'
 Verb 'fyld'
     * noun                              -> Fill;
 
-Verb 'tag'
-    * multi                             -> Take
-    * multiinside 'fra'/'af' noun       -> Remove;
-
 Verb 'giv' 'tilbyd' 'byd' 'betal'
     * held 'til' creature               -> Give
     * held 'bort' 'til' creature        -> Give
@@ -140,9 +136,6 @@ Verb 'lyt'
 	*                                           -> Listen
 	* 'til' noun                                 -> Listen;
 
-Verb 'lås'
-	* noun 'med' held                          -> Lock;
-
 Verb 'se' 'kig' 'k//' 'l//'
     * noun                              -> Examine
     * 'på' noun                         -> Examine
@@ -153,10 +146,6 @@ Verb 'se' 'kig' 'k//' 'l//'
 Verb 'åbn' 'åben' 'afdæk'
     * noun                              -> Open
     * noun 'med' held                   -> Unlock;
-
-Verb 'tag' 'samle'
-    * 'op' multi                        -> Take
-    * multi 'op'                        -> Take;
 
 Verb 'træk' 'hiv'
     * noun                              -> Pull;
@@ -175,7 +164,7 @@ Verb 'put' 'placer'
 
 Verb 'læs'
     * noun                              -> Examine
-    * 'i//'på' noun                     -> Examine
+    * 'i//'/'på' noun                   -> Examine
     * 'om' topic 'i//' noun             -> Consult reverse
     * topic 'i//' noun                  -> Consult;
 
@@ -222,18 +211,20 @@ Verb 'tænd'
     * noun                              -> SwitchOn
     * 'for' noun                        -> SwitchOn;
 
-
 Verb 'tag'
     * multi                             -> Take
     * 'fat' 'i//' multi                 -> Take
     * multi 'op'/'frem'                 -> Take
     * noun 'af'                         -> Disrobe
     * noun 'af' 'mig'/'dig'             -> Disrobe
-    * multiinside 'fra'/'i//' noun -> Remove
+        * multiinside 'fra'/'i//'/'af' noun -> Remove
     * multiinside 'op'/'frem'/'ud'/'bort' 'i//'/'fra'/'udfra'/'af' noun -> Remove
     * held 'på'                         -> Wear
     * held 'på' 'mig'/'dig'             -> Wear
     * 'på' noun                         -> Touch;
+
+Verb 'samle' 'saml'
+    * multi 'op'                        -> Take;
 
 Verb 'fortæl' 'forklar' 'nævn'
     * creature 'om' topic               -> Tell;
@@ -1062,7 +1053,7 @@ Verb 'ja' 'j//' 'ok' 'jo' 'yes' 'y//'
 Verb meta 'igen' 'g//'
     *                                   -> Again;
 
-Verb meta 'kort' 'brief' 'normal' 'korte' 'normale'
+Verb meta 'brief' 'normal' 'normale'
     *                                   -> LookModeNormal
     * 'beskrivelser'                    -> LookModeNormal;
 
