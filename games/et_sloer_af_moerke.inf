@@ -63,6 +63,28 @@ Object  foyer "Foyeren i Operahuset"
             udenfor bliver værre og værre.",
  has    light;
 
+Object  -> kasse "kasse"
+ with
+        name 'kasse' 'kassen',
+        inside_description "Det føles virkelig rart at stå i kassen.",
+        short_name_def "kassen",
+        article  ARTICLE_EN,
+ has    container open openable enterable;
+
+
+Object  -> kamera "kamera"
+ with
+        name 'kamera' 'kameraet',
+        article  ARTICLE_ET,
+ has    neuter;
+
+Object  -> aeg "fugleæg"
+ with
+        name 'fugleæg' 'fugleæggene' 'æg' 'æggene',
+        article  ARTICLE_NOGLE,
+ has    pluralname;
+
+
 Object  garderobe "Garderobe"
  with   description
             "Væggene i dette lille rum var øjensynligt engang udstyret med
@@ -73,7 +95,7 @@ Object  garderobe "Garderobe"
 
 Object  knage "lille messingknage" garderobe
  with   name 'lille' 'messing' 'knage' 'knagen',
-        shor_name_def "knagen",
+        short_name_def "knagen",
         description [;
             print "Det er en lille knage af messing ";
             if (self == parent(sloer)) "med et slør hængende på den.";
@@ -136,7 +158,7 @@ Object  sloer "silkeslør"
                 }
             }
         ],
- has    clothing general;
+ has    neuter clothing general;
 
 Object  besked "skriblet besked" bar
  with   name 'besked' 'beskeden' 'savsmuld' 'gulv',

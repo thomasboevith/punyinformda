@@ -646,7 +646,7 @@ Constant SKIP_MSG_EXAMINE_DARK;
 	switch(p_msg) {
 #Iftrue MSG_TAKE_SCENERY < 1000;
 	MSG_TAKE_SCENERY:
-		print_ret (CTheyreorThats) noun, " næppe bærbar.";
+		print_ret (CDenEllerDet) noun, " er næppe bærbar.";
 #EndIf;
 #Ifndef SKIP_MSG_PUSH_DEFAULT;
 	MSG_PUSH_DEFAULT, MSG_PULL_DEFAULT, MSG_TURN_DEFAULT:
@@ -946,7 +946,7 @@ Constant SKIP_MSG_EXAMINE_DARK;
 #EndIf;
 #IfTrue MSG_SEARCH_IN_IT_ISARE < 1000;
 	MSG_SEARCH_IN_IT_ISARE:
-            print (DenEllerDet) noun, " indeholder ";
+            print (CDenEllerDet) noun, " indeholder ";
 		PrintContents(0, noun);
 		".";
 #EndIf;
@@ -1172,6 +1172,12 @@ default:
 ];
 
 [ DenEllerDet p_obj;
+    print "de";
+    if (p_obj has neuter) print "t";
+    else print "n";
+];
+
+[ CDenEllerDet p_obj;
     print "De";
     if (p_obj has neuter) print "t";
     else print "n";
