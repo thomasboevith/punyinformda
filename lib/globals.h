@@ -564,10 +564,13 @@ Global scope_copy_actor = 0;
 Global scope_routine;    ! for scope=Routine grammar
 Global scope_stage;      ! for scope=Routine grammar: 1, 2 then 3
 Global keep_silent;
-Global itobj = 0;        ! The object which is currently "it"
-Global himobj = 0;       ! The object which is currently "him"
-Global herobj = 0;       ! The object which is currently "her"
-Global themobj = 0;       ! The object which is currently "them"
+!DANISH
+Global uterobj = 0;      ! The object which is currently "den"
+Global neuterobj = 0;    ! The object which is currently "det"
+
+Global himobj = 0;       ! The object which is currently "ham"
+Global herobj = 0;       ! The object which is currently "hende"
+Global themobj = 0;      ! The object which is currently "dem"
 Global top_object;
 Global newline_flag;     ! Used by Look
 Global also_flag;        ! Used by Look
