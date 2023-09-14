@@ -4,225 +4,264 @@
 ! Base verbs
 ! ---------------------
 
-Verb 'answer' 'say' 'speak'
-    * topic 'to' creature                       -> Answer;
+Verb 'svar' 'sig' 'tal'
+    * topic 'til' creature              -> Answer;
 
-Verb 'ask'
-	* creature 'about' topic                    -> Ask
-	* creature 'for' noun                       -> AskFor
-	* creature 'to' topic                       -> AskTo
-	* 'that' creature topic                     -> AskTo;
+Verb 'spørg' 'bed'
+    * creature 'om' topic               -> Ask
+    * creature 'om' noun                -> AskFor
+    * creature 'om' 'at' topic          -> AskTo;
 
-Verb 'attack' 'break' 'crack' 'destroy'
-     'fight' 'hit' 'kill' 'murder' 'punch'
-     'smash' 'thump' 'torture' 'wreck'
-    * noun                                      -> Attack
-    * noun 'with' held                          -> Attack;
+Verb 'angrib' 'bræk' 'knæk' 'ødelæg' 'bekæmp' 'dræb' 'myrd'
+    'myrde' 'kvæst' 'kværk' 'smadre' 'smadr' 'kvas' 'torturer'
+    * noun                              -> Attack
+    * noun 'med' held                   -> Attack;
 
-Verb 'climb' 'scale'
-	* noun                                      -> Climb
-	* 'up'/'over' noun                          -> Climb
-	* 'into'/'onto' noun                        -> Enter
-	* 'out' 'of'/'from' noun                    -> Exit;
+Verb 'klatre' 'klatr' 'kravl' 'bestig'
+    * noun                              -> Climb
+    * 'på'/'over'/'opover'/'i//' noun   -> Climb
+    * 'ud'/'af'/'ned'                   -> Exit
+    * 'af' noun                         -> Exit
+    * 'ned' 'fra'/'af' noun             -> Exit
+    * 'op' 'på' noun                    -> Climb
+    * 'ind' 'i//'/'gennem'/'igennem' noun -> Enter
+    * 'gennem'/'igennem' noun           -> Enter;
 
-Verb 'close' 'cover' 'shut'
-	* noun                                      -> Close
-	* 'off' noun                                -> SwitchOff;
+Verb 'luk'
+    * noun                              -> Close
+    * noun 'igen'                       -> Close
+    * 'for' noun                        -> SwitchOff
+    * 'af' 'for' noun                   -> SwitchOff;
 
-Verb 'cut' 'chop' 'prune' 'slice'
-	* noun                                      -> Cut
-	* noun 'with' held                          -> Attack;
+Verb 'skær' 'beskær' 'snit'
+    * noun                              -> Cut
+    * noun 'ned'                        -> Cut
+    * 'af'/'op'/'ned'/'i//' noun        -> Cut;
 
-Verb 'dig'
-	* noun                                      -> Dig
-	* noun 'with' held                          -> Dig;
+Verb 'grav'
+    * noun                              -> Dig
+    * noun 'med' held                   -> Dig
+    * noun 'op' 'med' held              -> Dig
+    * 'i//'/'op' noun 'med' held        -> Dig;
 
-Verb 'drink' 'sip' 'swallow'
-    * noun                                      -> Drink;
+Verb 'drik' 'synk'
+    * noun                              -> Drink
+    * 'af' noun                         -> Drink;
 
-Verb 'drop' 'discard' 'throw'
-	* multiheld                                 -> Drop
-	* multiexcept 'in'/'into'/'down' noun       -> Insert
-	* held 'at'/'against'/'on'/'onto' noun      -> ThrowAt;
+Verb 'smid' 'dump' 'kast'
+    * multiheld                         -> Drop
+    * held                              -> Disrobe
+    * multiexcept 'i//'/'indeni' noun   -> Insert
+    * multiexcept 'ind' 'i//' noun      -> Insert
+    * multiexcept 'på'/'ovenpå' noun    -> PutOn
+    * multiexcept 'mod' noun            -> ThrowAt
+    * multiexcept 'op'/'oppe' 'på' noun -> PutOn;
 
-Verb 'eat'
-    * held                                      -> Eat;
+Verb 'spis' 'æd'
+    * held                              -> Eat
+    * held 'op'                         -> Eat;
+
+!#IfDef OPTIONAL_EXTENDED_VERBSET;
+!Verb 'enter'
+!	*                                           -> GoIn
+!	* noun                                      -> Enter;
+!#IfNot;
+!Verb 'enter'
+!	* noun                                      -> Enter;
+!#Endif;
 
 #IfDef OPTIONAL_EXTENDED_VERBSET;
-Verb 'enter'
-	*                                           -> GoIn
-	* noun                                      -> Enter;
+Verb 'gå'
+    *                                   -> GoIn
+    * 'ind'                             -> GoIn
+    * noun                              -> Enter
+    * 'ind'/'op'/'ned' 'i//' noun       -> Enter
+    * 'ind'/'på' noun                   -> Enter
+    * 'op'/'oven' 'på' noun             -> Enter
+    * 'ind' 'gennem'/'igennem' noun     -> Enter
+    * 'gennem'/'igennem' noun           -> Enter
+    * 'ud'                              -> Exit
+    * 'ud'/'ned'/'op' 'af'/'fra' noun   -> Exit
+    * 'op'/'ud'/'af'                    -> Exit
+    * 'ud' 'gennem'/'igennem' noun      -> Exit
+    * 'af' noun                         -> GetOff
+    * noun=ADirection                   -> Go
+    * 'til'/'mod' noun=ADirection       -> Go;
 #IfNot;
-Verb 'enter'
-	* noun                                      -> Enter;
+Verb 'gå'
+    * noun                              -> Enter
+    * 'ind' 'i//' noun                  -> Enter;
 #Endif;
 
-Verb 'examine' 'x//'
-	* noun -> Examine;
+Verb 'undersøg' 'u//' 'examine' 'x//'
+    * noun                              -> Examine;
 
-Verb 'exit' 'leave'
-	*                                           -> Exit
-	* noun                                      -> Exit;
+Verb 'forlad'
+    * noun                              -> Exit;
 
-Verb 'fill'
-	* noun                                      -> Fill;
+Verb 'fyld'
+    * noun                              -> Fill;
 
-Verb 'get'
-  * 'out'/'off'/'up' 'of'/'from' noun         -> Exit
-  * 'up'/'out'/'off'                          -> Exit
-  * multi                                     -> Take
-  * 'in'/'into'/'on'/'onto' noun              -> Enter
-  * 'off' noun                                -> GetOff
-  * multiinside 'from'/'off' noun             -> Remove;
+Verb 'tag'
+    * multi                             -> Take
+    * multiinside 'fra'/'af' noun       -> Remove;
 
-Verb 'give' 'feed' 'offer' 'pay'
-	* held 'to' creature                        -> Give
-	* creature held                             -> Give reverse
-	* 'over' held 'to' creature                 -> Give;
+Verb 'giv' 'tilbyd' 'byd' 'betal'
+    * held 'til' creature               -> Give
+    * held 'bort' 'til' creature        -> Give
+    * creature held                     -> Give reverse;
 
 [ ADirection;
 	if (noun == Directions) rtrue;
 	rfalse;
 ];
 
-Verb 'go'
-	* noun=ADirection                           -> Go
-	* noun                                      -> Enter;
-
-Verb 'insert'
-    * multiexcept 'in'/'into' noun              -> Insert;
+Verb 'sæt'
+    * multiexcept 'ind' 'i//' noun              -> Insert;
 
 #Ifdef OPTIONAL_FLEXIBLE_INVENTORY;
-Verb 'inventory' 'i//'
-	* -> Inv
-	* 'tall'/'wide' -> Inv;
+Verb 'ejendele' 'i//' 't//' 'list'
+    *                                   -> Inv
+    * 'lang'/'bred'                     -> Inv;
 #Ifnot;
-Verb 'inventory' 'i//'
-	* -> Inv;
+Verb 'ejendele' 'i//' 't//' 'list'
+    *                                   -> Inv;
 #Endif;
 
-Verb 'jump'
-	*                                           -> Jump
-	* 'over' noun                               -> JumpOver
-	* 'in'/'into'/'onto' noun                   -> Enter
-	* 'out' 'of'/'from' noun                    -> Exit
-	* 'off' noun                                -> Exit;
+Verb 'hop' 'spring'
+    *                                   -> Jump
+    * 'over' noun                       -> JumpOver
+    * 'ind'/'på' noun                   -> Enter
+    * 'ind' 'i//' noun                  -> Enter
+    * 'ud' 'af'/'fra' noun              -> Exit
+    * 'af'/'fra' noun                   -> Exit;
 
-Verb 'listen'
+Verb 'lyt'
 	*                                           -> Listen
-	* 'to' noun                                 -> Listen;
+	* 'til' noun                                 -> Listen;
 
-Verb 'lock'
-	* noun 'with' held                          -> Lock;
+Verb 'lås'
+	* noun 'med' held                          -> Lock;
 
-Verb 'look' 'l//'
-	* noun                                      -> Examine
-	* 'at' noun                                 -> Examine
-	*                                           -> Look
-	* 'in'/'inside'/'on' noun                   -> Search;
+Verb 'se' 'kig' 'k//' 'l//'
+    * noun                              -> Examine
+    * 'på' noun                         -> Examine
+    *                                   -> Look
+    * 'i//'/'indeni'/'gennem'/'igennem' noun -> Search
+    * 'ind'/'inde' 'i//' noun           -> Search;
 
-Verb 'open' 'uncover' 'unwrap'
-	* noun                                      -> Open
-	* noun 'with' held                          -> Unlock;
+Verb 'åbn' 'åben' 'afdæk'
+    * noun                              -> Open
+    * noun 'med' held                   -> Unlock;
 
-Verb 'pick'
-	* 'up' multi                                -> Take
-	* multi 'up'                                -> Take;
+Verb 'tag' 'samle'
+    * 'op' multi                        -> Take
+    * multi 'op'                        -> Take;
 
-Verb 'pull' 'drag'
-    * noun                                      -> Pull;
+Verb 'træk' 'hiv'
+    * noun                              -> Pull;
 
-Verb 'push' 'clear' 'move' 'press' 'shift'
-    * noun                                      -> Push
-    * noun noun=ADirection                      -> PushDir
-    * noun 'to' noun                            -> Transfer;
+Verb 'tryk' 'flyt' 'skub' 'pres'
+    * noun                              -> Push
+    * 'på'/'til' noun                   -> Push
+    * noun noun=ADirection              -> PushDir
+    * noun 'til' noun                   -> Transfer;
 
-Verb 'put' 'place'
-	* multiexcept 'in'/'inside'/'into' noun     -> Insert
-	* multiexcept 'on'/'onto' noun              -> PutOn
-	* 'on' held									-> Wear;
+Verb 'put' 'placer'
+    * multiexcept 'i//'/'indeni' noun   -> Insert
+    * multiexcept 'inde'/'inden' 'i//' noun -> Insert
+    * multiexcept 'på'/'ovenpå' noun    -> PutOn
+    * multiexcept 'oppe' 'på' noun      -> PutOn;
 
-Verb 'read'
-	* noun                                      -> Examine
-	* 'about' topic 'in' noun                   -> Consult reverse
-	* topic 'in' noun                           -> Consult;
+Verb 'læs'
+    * noun                              -> Examine
+    * 'i//'på' noun                     -> Examine
+    * 'om' topic 'i//' noun             -> Consult reverse
+    * topic 'i//' noun                  -> Consult;
 
-Verb 'remove'
-	* held                                      -> Disrobe
-	* multi                                     -> Take
-	* multiinside 'from' noun                   -> Remove;
+Verb 'fjern'
+    * held                              -> Disrobe
+    * multi                             -> Take
+    * multiinside 'fra' noun            -> Remove;
 
-Verb 'rub' 'clean' 'dust' 'polish' 'scrub' 'shine' 'sweep' 'wipe'
-	* noun                                      -> Rub;
+Verb 'gnid' 'rens' 'poler' 'polere' 'knub' 'stryg' 'skrub' 'puds'
+    * noun                              -> Rub
+    * 'på' noun                         -> Rub;
 
-Verb 'search'
-	* noun                                      -> Search;
+Verb 'søg' 'led'
+    * noun                              -> Search
+    * 'igennem'/'i//' noun              -> Search
+    * 'gennem' noun                     -> Search;
 
-Verb 'shed' 'disrobe' 'doff'
-	* held                                      -> Disrobe;
+Verb 'råb' 'skrig'
+    * topic 'til' creature              -> Answer
+    * 'til' noun                        -> ShoutAt
+    * topic                             -> Shout
+    *                                   -> Shout;
 
-Verb 'shout' 'scream' 'yell'
-    * topic 'to'/'at' creature                  -> Answer
-    * 'to'/'at' noun                            -> ShoutAt
-	* topic                                     -> Shout
-	*                                           -> Shout;
+Verb 'vis' 'præsenter'
+    * creature held                     -> Show reverse
+    * held 'til'/'for' creature         -> Show;
 
-Verb 'show' 'display' 'present'
-	* creature held                             -> Show reverse
-	* held 'to' creature                        -> Show;
+Verb 'sid' 'læg' 'lig'
+    * 'på'/'i//'/'indeni' noun          -> Enter
+    * 'på' 'toppen' 'af' noun              -> Enter;
 
-Verb 'sit' 'lie'
-	* 'on'/'in'/'inside' noun                   -> Enter
-	* 'on' 'top' 'of' noun                      -> Enter;
+Verb 'lugt' 'snif' 'snus'
+    *                                   -> Smell
+    * noun                              -> Smell
+    * 'til'/'i//' noun                  -> Smell;
 
-Verb 'smell' 'sniff'
-	*                                           -> Smell
-	* noun                                      -> Smell;
+Verb 'stå'
+    *                                   -> Exit
+    * 'af'                              -> Exit
+    * 'op'                              -> Exit
+    * 'på' noun                         -> Enter;
 
-Verb 'stand'
-	*                                           -> Exit
-	* 'up'                                      -> Exit
-	* 'on' noun                                 -> Enter;
+Verb 'tænd'
+    * noun                              -> SwitchOn
+    * 'for' noun                        -> SwitchOn;
 
-Verb 'switch'
-	* 'on' noun                                 -> SwitchOn
-	* 'off' noun                                -> SwitchOff
-	* noun 'on'                                 -> SwitchOn
-	* noun 'off'                                -> SwitchOff
-	* noun                                      -> SwitchOn;
 
-Verb 'take' 'carry' 'hold'
-	* multi                                     -> Take
-	* 'off' noun                                -> Disrobe
-	* multiinside 'from'/'off' noun             -> Remove
-	* 'inventory'                               -> Inv;
+Verb 'tag'
+    * multi                             -> Take
+    * 'fat' 'i//' multi                 -> Take
+    * multi 'op'/'frem'                 -> Take
+    * noun 'af'                         -> Disrobe
+    * noun 'af' 'mig'/'dig'             -> Disrobe
+    * multiinside 'fra'/'i//' noun -> Remove
+    * multiinside 'op'/'frem'/'ud'/'bort' 'i//'/'fra'/'udfra'/'af' noun -> Remove
+    * held 'på'                         -> Wear
+    * held 'på' 'mig'/'dig'             -> Wear
+    * 'på' noun                         -> Touch;
 
-Verb 'tell'
-	* creature 'about' topic                    -> Tell
-	* creature 'to' topic                       -> AskTo;
+Verb 'fortæl' 'forklar' 'nævn'
+    * creature 'om' topic               -> Tell;
 
-Verb 'tie' 'attach' 'fasten' 'fix'
-	* noun                                      -> Tie
-	* noun 'to' noun                            -> Tie;
+Verb 'bind' 'fæst' 'knyt' 'fastgør'
+    * noun                              -> Tie
+    * noun 'fast' 'i//' noun            -> Tie
+    * noun 'til'/'i//' noun             -> Tie;
 
-Verb 'touch' 'feel' 'fondle' 'grope'
+Verb 'rør' 'berør' 'kæl' 'befaml'
 	* noun                                      -> Touch;
 
-Verb 'turn' 'rotate' 'screw' 'twist' 'unscrew'
-	* noun                                      -> Turn
-	* noun 'on'                                 -> SwitchOn
-	* noun 'off'                                -> SwitchOff
-	* 'on' noun                                 -> SwitchOn
-	* 'off' noun                                -> SwitchOff;
+Verb 'snur' 'skru' 'vrid' 'drej'
+    * noun                              -> Turn
+    * 'på' noun                         -> Turn
+    * noun 'på'/'af'                    -> Turn
+    * 'på' switchable                   -> SwitchOn
+    * switchable 'af'                   -> SwitchOff;
 
-Verb 'unlock'
-	* noun 'with' held                          -> Unlock;
+Verb 'lås'
+    * noun 'med' held                   -> Lock
+    * noun 'op' 'med' held              -> Unlock;
 
-Verb 'wait' 'z'
-    *                                           -> Wait;
+Verb 'vent' 'z'
+    *                                   -> Wait;
 
-Verb 'wear'
-	* held										-> Wear;
+Verb 'bær'
+    * held                              -> Wear;
 
 [ AnswerSub;
 	if (second > 1 && RunLife(second,##Answer) ~= 0) rfalse;
@@ -257,12 +296,12 @@ Verb 'wear'
 
 [ CloseSub;
 	if(ObjectIsUntouchable(noun)) return;
-	if(noun hasnt openable) { PrintMsg(MSG_CLOSE_YOU_CANT, 'close'); rtrue; }
+	if(noun hasnt openable) { PrintMsg(MSG_CLOSE_YOU_CANT, 'lukke'); rtrue; }
 	if(noun hasnt open) { PrintMsg(MSG_CLOSE_NOT_OPEN, noun); rtrue; }
 	give noun ~open;
 	scope_modified = true;
 	run_after_routines_msg = MSG_CLOSE_DEFAULT;
-	run_after_routines_arg_1 = 'close';
+	run_after_routines_arg_1 = 'lukke';
 ];
 
 [ ConsultSub;
@@ -335,13 +374,13 @@ Verb 'wear'
 		_door_dir = DirPropToFakeObj(_door_dir);
 		<<Go _door_dir>>;
 	}
-	if(noun hasnt enterable) { PrintMsg(MSG_ENTER_YOU_CANT, 'enter'); rtrue; }
+	if(noun hasnt enterable) { PrintMsg(MSG_ENTER_YOU_CANT, 'gå ind'); rtrue; }
 	if(player in noun) { PrintMsg(MSG_ENTER_ALREADY); rtrue; }
 	if(noun has container && noun hasnt open) { PrintMsg(MSG_ENTER_NOT_OPEN, noun); rtrue; }
 	if(parent(noun) ~= parent(player)) { PrintMsg(MSG_ENTER_BAD_LOCATION); rtrue; }
 	PlayerTo(noun, true);
 	run_after_routines_msg = MSG_ENTER_DEFAULT;
-	run_after_routines_arg_1 = 'enter';
+	run_after_routines_arg_1 = 'gå ind';
 ];
 
 [ ExamineSub x;
@@ -383,7 +422,7 @@ Verb 'wear'
 	if(noun has container && noun hasnt open) { PrintMsg(MSG_EXIT_NOT_OPEN, noun); rtrue; }
 	PlayerTo(parent(noun), true);
 	run_after_routines_msg = MSG_EXIT_DEFAULT;
-	run_after_routines_arg_1 = 'leave';
+	run_after_routines_arg_1 = 'forlade';
 ];
 
 [ FillSub;
@@ -554,14 +593,14 @@ Array _InsertMessages -->
 
 [ LockSub;
 	if (ObjectIsUntouchable(noun)) return;
-	if (noun hasnt lockable) { PrintMsg(MSG_LOCK_NOT_A_LOCK, 'lock'); rtrue; }
-	if (noun has locked)  { PrintMsg(MSG_LOCK_ALREADY_LOCKED, 'lock'); rtrue; }
+	if (noun hasnt lockable) { PrintMsg(MSG_LOCK_NOT_A_LOCK, 'låse'); rtrue; }
+	if (noun has locked)  { PrintMsg(MSG_LOCK_ALREADY_LOCKED, 'låse'); rtrue; }
 	if (noun has open) { PrintMsg(MSG_LOCK_CLOSE_FIRST); rtrue; }
 	if(ImplicitGrabIfNotHeld(second)) rtrue;
 	if (RunRoutines(noun, with_key) ~= second) { PrintMsg(MSG_LOCK_KEY_DOESNT_FIT); rtrue; }
 	give noun locked;
 	run_after_routines_msg = MSG_LOCK_DEFAULT;
-	run_after_routines_arg_1 = 'lock';
+	run_after_routines_arg_1 = 'låse';
 ];
 
 [ LookSub _old_lookmode;
@@ -573,7 +612,7 @@ Array _InsertMessages -->
 
 [ OpenSub;
 	if(ObjectIsUntouchable(noun)) return;
-	if(noun hasnt openable) { PrintMsg(MSG_OPEN_YOU_CANT, 'open'); rtrue; }
+	if(noun hasnt openable) { PrintMsg(MSG_OPEN_YOU_CANT, 'åbne'); rtrue; }
 	if(noun has locked) { PrintMsg(MSG_OPEN_LOCKED); rtrue; }
 	if(noun has open) { PrintMsg(MSG_OPEN_ALREADY); rtrue; }
 	give noun open;
@@ -761,13 +800,13 @@ Array _PutOnMessages -->
 
 [ UnlockSub;
 	if (ObjectIsUntouchable(noun)) return;
-	if (noun hasnt lockable) { PrintMsg(MSG_UNLOCK_NOT_A_LOCK, 'unlock'); rtrue; }
-	if (noun hasnt locked)  { PrintMsg(MSG_UNLOCK_ALREADY_UNLOCKED, 'unlock'); rtrue; }
+	if (noun hasnt lockable) { PrintMsg(MSG_UNLOCK_NOT_A_LOCK,'låse op'); rtrue; }
+	if (noun hasnt locked)  { PrintMsg(MSG_UNLOCK_ALREADY_UNLOCKED, 'låse op'); rtrue; }
 	if(ImplicitGrabIfNotHeld(second)) rtrue;
 	if (RunRoutines(noun, with_key) ~= second) { PrintMsg(MSG_UNLOCK_KEY_DOESNT_FIT); rtrue; }
 	give noun ~locked;
 	run_after_routines_msg = MSG_UNLOCK_DEFAULT;
-	run_after_routines_arg_1 = 'unlock';
+	run_after_routines_arg_1 = 'låse op';
 ];
 
 [ WaitSub;
@@ -778,7 +817,7 @@ Array _PutOnMessages -->
 [ WearSub;
 	if (parent(noun) ~= player) { PrintMsg(MSG_WEAR_NOT_HOLDING); rtrue; }
 	if (noun has worn) { PrintMsg(MSG_WEAR_ALREADY_WORN); rtrue; }
-	if (noun hasnt clothing) { PrintMsg(MSG_WEAR_NOT_CLOTHING, 'wear'); rtrue; }
+	if (noun hasnt clothing) { PrintMsg(MSG_WEAR_NOT_CLOTHING, 'bære'); rtrue; }
 	give noun worn;
 	run_after_routines_msg = MSG_WEAR_DEFAULT;
 ];
@@ -790,100 +829,96 @@ Array _PutOnMessages -->
 
 #IfDef OPTIONAL_EXTENDED_VERBSET;
 
-Verb 'blow'
+Verb 'blæse'
 	* held                                      -> Blow;
 
-Verb 'bother' 'curses' 'darn' 'drat'
+Verb 'sgu' 'sørens' 'fy' 'pokker'
 	*                                           -> Mild
 	* topic                                     -> Mild;
 
-Verb 'burn' 'light'
+Verb 'brænd' 'tænd' 'antænd'
 	* noun                                      -> Burn
-	* noun 'with' held                          -> Burn;
+	* noun 'med' held                          -> Burn;
 
-Verb 'buy' 'purchase'
+Verb 'køb'
 	* noun                                      -> Buy;
 
-Verb 'consult'
-	* noun 'about' topic                        -> Consult
-	* noun 'on' topic                           -> Consult;
+Verb 'slå'
+    * noun 'op' 'i//' topic             -> Consult;
 
-Verb 'empty'
-	* noun                                      -> Empty
-	* 'out' noun                                -> Empty
-	* noun 'out'                                -> Empty
-	* noun 'to'/'into'/'on'/'onto' noun         -> EmptyT;
+Verb 'tøm'
+    * noun                              -> Empty
+    * noun 'ud'                         -> Empty
+    * noun 'i//'/'indeni'/'på'/'ovenpå' noun -> EmptyT;
 
-Verb 'in' 'inside'
-	*                                           -> GoIn;
+Verb 'ind'
+    *                                   -> GoIn;
 
-Verb 'kiss' 'embrace' 'hug'
-    * creature                                  -> Kiss;
+Verb 'kys' 'knus' 'kram'
+    * creature                          -> Kiss;
 
-Verb 'no'
-	*                                           -> No;
+Verb 'nej' 'næ'
+    *                                   -> No;
 
-Verb 'peel'
-	* noun                                      -> Take
-	* 'off' noun                                -> Take;
+Verb 'skræl'
+    * noun                              -> Take
+    * noun 'af'                         -> Take;
 
-Verb 'pray'
+Verb 'bed'
     *                                           -> Pray;
 
-Verb 'pry' 'prise' 'prize' 'lever' 'jemmy' 'force'
-	* noun 'with' held                          -> Unlock
-	* 'apart'/'open' noun 'with' held           -> Unlock
-	* noun 'apart'/'open' 'with' held           -> Unlock;
+Verb 'lirk' 'dirk'
+    * noun 'med' held                   -> Unlock
+    * noun 'åben' 'med' held            -> Unlock;
 
-Verb 'set' 'adjust'
-	* noun                                      -> Set
-	* noun 'to' special                         -> SetTo;
+Verb 'stil' 'indstil'
+    * noun                              -> Set
+    * noun 'til' special                -> SetTo;
 
-Verb 'shit' 'damn' 'fuck' 'sod'
-	*                                           -> Strong
-	* topic                                     -> Strong;
+Verb 'fanden' 'fandens' 'fandme' 'satan' 'satans' 'helvede'
+    'lort' 'pis' 'røv' 'knep' 'pul' 'forpulede' 'fuck'
+    *                                   -> Strong
+    * topic                             -> Strong;
 
-Verb 'sing'
-	*                                           -> Sing;
+Verb 'syng'
+    *                                   -> Sing;
 
-Verb 'sleep' 'nap'
-	*                                           -> Sleep;
+Verb 'sov'
+    *                                   -> Sleep;
 
-Verb 'sorry'
-	*                                           -> Sorry;
+Verb 'undskyld' 'sorry'
+    *                                   -> Sorry;
 
-Verb 'squeeze' 'squash'
-	* noun                                      -> Squeeze;
+Verb 'klem'
+    * noun                              -> Squeeze;
 
-Verb 'swim' 'dive'
-	*                                           -> Swim;
+Verb 'svøm' 'dyk'
+    *                                   -> Swim;
 
-Verb 'swing'
-	* noun                                      -> Swing
-	* 'on' noun                                 -> Swing;
+Verb 'sving'
+    * noun                              -> Swing
+    * 'på' noun                         -> Swing;
 
-Verb 'taste'
-	* noun                                      -> Taste;
+Verb 'smag'
+    * noun                              -> Taste
+    * 'på' noun                         -> Taste;
 
-Verb 'think'
-	*                                           -> Think;
+Verb 'tænk'
+    *                                   -> Think;
 
-Verb 'transfer'
-	* noun 'to' noun                            -> Transfer;
+Verb 'overfør' 'flyt'
+    * noun 'til' noun                   -> Transfer;
 
-Verb 'wake' 'awake' 'awaken'
-    *                                           -> Wake
-    * 'up'                                      -> Wake
-    * creature                                  -> WakeOther
-    * creature 'up'                             -> WakeOther
-    * 'up' creature                             -> WakeOther;
+Verb 'vågn' 'væk'
+    *                                   -> Wake
+    * creature                          -> WakeOther;
 
-Verb 'wave'
-	*                                           -> WaveHands
-	* noun                                      -> Wave;
+Verb 'vink' 'vift'
+    *                                   -> WaveHands
+    * noun                              -> Wave;
 
-Verb 'yes' 'y//'
-	*                                           -> Yes;
+Verb 'ja' 'j//' 'ok' 'jo' 'yes' 'y//'
+    *                                   -> Yes;
 
 [ BlowSub;
 	if(ImplicitGrabIfNotHeld(noun)) rtrue;
@@ -1024,52 +1059,55 @@ Verb 'yes' 'y//'
 ! Base meta verbs
 ! ---------------------
 
-Verb meta 'again' 'g//'
-    *                                           -> Again;
+Verb meta 'igen' 'g//'
+    *                                   -> Again;
 
-Verb meta 'brief' 'normal'
-	*                                           -> LookModeNormal;
+Verb meta 'kort' 'brief' 'normal' 'korte' 'normale'
+    *                                   -> LookModeNormal
+    * 'beskrivelser'                    -> LookModeNormal;
 
 #Ifdef OPTIONAL_FULL_SCORE;
-Verb meta 'fullscore' 'full'
-    *                                           -> FullScore
-    * 'score'                                   -> FullScore;
+Verb meta 'fullscore' 'full' 'total' 'fuldpoint'
+    *                                   -> FullScore
+    * 'score'                           -> FullScore;
 #Endif;
 
 #Ifndef NO_SCORE;
-Verb meta 'notify'
-	*                                           -> NotifyOn
-	* 'on'                                      -> NotifyOn
-	* 'off'                                     -> NotifyOff;
+Verb meta 'notify' 'meddelelser'
+    *                                   -> NotifyOn
+    * 'on'/'til'                        -> NotifyOn
+    * 'off'/'fra'                       -> NotifyOff;
 #Endif;
 
-Verb meta 'oops'
-    *                                           -> Oops
-    * special                                   -> OopsCorrection;
+Verb meta 'oops' 'ups'
+    *                                   -> Oops
+    * special                           -> OopsCorrection;
 
-Verb meta 'restart'
-	*                                           -> Restart;
+Verb meta 'restart' 'genstart'
+    *                                   -> Restart;
 
-Verb meta 'restore'
-	*                                           -> Restore;
+Verb meta 'restore' 'hent'
+    *                                   -> Restore;
 
-Verb meta 'save'
-	*                                           -> Save;
+Verb meta 'save' 'gem'
+    *                                   -> Save;
 
 Verb meta 'score'
-    *                                           -> Score;
+    *                                   -> Score;
 
-Verb meta 'superbrief' 'short'
-	*                                           -> LookModeShort;
+Verb meta 'superbrief' 'short' 'kort' 'korte'
+    *                                   -> LookModeShort
+    * 'beskrivelser'                    -> LookModeShort;
 
-Verb meta 'verbose' 'long'
-	*                                           -> LookModeLong;
+Verb meta 'verbose' 'long' 'lang' 'lange'
+    *                                   -> LookModeLong
+    * 'beskrivelser'                    -> LookModeLong;
 
 Verb meta 'version'
-	*                                           -> Version;
+    *                                   -> Version;
 
-Verb meta 'quit' 'q//'
-	*                                           -> Quit;
+Verb meta 'quit' 'q//' 'afslut' 'a//'
+    *                                   -> Quit;
 
 [ AgainSub;
 	! nothing here - this is taken care of in the main game loop instead
@@ -1135,17 +1173,17 @@ Verb meta 'quit' 'q//'
 #Ifndef NO_SCORE;
 [ NotifyOnSub;
 	notify_mode = 1;
-	"Score notification on.";
+	"Score meddelelser til.";
 ];
 
 [ NotifyOffSub;
 	notify_mode = 0;
-	"Score notification off.";
+	"Score meddelelser fra.";
 ];
 #Endif;
 
 [ OopsSub;
-	"Think nothing of it.";
+	"Tænk ikke over det.";
 ];
 
 [ OopsCorrectionSub;
@@ -1267,62 +1305,62 @@ Verb meta 'noscript' 'unscript'
 	*                                           -> ScriptOff;
 
 #Ifndef NO_PLACES;
-Verb meta 'objects'
+Verb meta 'objects' 'objekter' 'ting'
 	*                                           -> Objects;
-Verb meta 'places'
+Verb meta 'places' 'steder'
 	*                                           -> Places;
 #Endif; ! NO_PLACES
 
-Verb meta 'recording'
+Verb meta 'recording' 'indspiling'
 	*                                           -> CommandsOn
 	* 'on'                                      -> CommandsOn
 	* 'off'                                     -> CommandsOff;
 
-Verb meta 'replay'
+Verb meta 'replay' 'afspil'
 	*                                           -> CommandsRead;
 
-Verb meta 'script' 'transcript'
+Verb meta 'script' 'transcript' 'udskrift'
 	*                                           -> ScriptOn
 	* 'on'                                      -> ScriptOn
 	* 'off'                                     -> ScriptOff;
 
-Verb meta 'verify'
+Verb meta 'verify' 'verificer'
 	*                                           -> Verify;
 
 [ CommandsOnSub;
 	@output_stream 4;
 	xcommsdir = 1;
-	"[Command recording on.]";
+	"[Kommando-optagelse til.]";
 ];
 
 [ CommandsOffSub;
 	if (xcommsdir == 1) @output_stream -4;
 	xcommsdir = 0;
-	"[Command recording off.]";
+	"[Kommando-optagelse fra.]";
 ];
 
 [ CommandsReadSub;
 	@input_stream 1;
 	xcommsdir = 2;
-	"[Replaying commands.]";
+	"[Afspiller kommandoer.]";
 ];
 
 #Ifndef NO_PLACES;
 [ PlacesSub i j k;
-	print "You have visited: ";
+	print "Du har besøgt: ";
 	objectloop(i has visited) if(parent(i) == 0) j++;
 	objectloop(i has visited) {
 		if(parent(i) == 0) {
 			print (name) i; k++;
 			if (k == j) { print ".^"; return; }
-			if (k == j-1) print " and ";
+			if (k == j-1) print " og ";
 			else          print ", ";
 		}
 	}
 ];
 
 [ ObjectsSub i j f;
-	print "Objects you have handled: ";
+	print "Ting som du har håndteret: ";
 	objectloop (i has moved) {
 		j = parent(i);
 		if(j) {
@@ -1331,47 +1369,47 @@ Verb meta 'verify'
 			print "- ", (the) i, "   ";
 			if (j == player) {
 				if (i has worn) {
-					print "(worn)";
+					print "(båret)";
 				} else {
-					print "(held)";
+					print "(holdt)";
 				}
-			} else if(j has animate) print "(given away)";
-			else if(j has visited) print "(in ", (name) j, ")";
-			else if(j has container) print "(inside ", (the) j, ")";
-			else if(j has supporter) print "(on ", (the) j, ")";
-			else if(j has enterable) print "(in ", (the) j, ")";
-			else print "(lost)";
+			} else if(j has animate) print "(givet væk)";
+			else if(j has visited) print "(i ", (name) j, ")";
+			else if(j has container) print "(inden i ", (the) j, ")";
+			else if(j has supporter) print "(på ", (the) j, ")";
+			else if(j has enterable) print "(i ", (the) j, ")";
+			else print "(tabt)";
 			@new_line;
 		}
 	}
-	if(f == 0) "none.";
+	if(f == 0) "ingen.";
 ];
 #Endif; ! NO_PLACES
 
 [ ScriptOnSub;
 	transcript_mode = ((HDR_GAMEFLAGS-->0) & 1);
-	if (transcript_mode) "Transcripting is already on.";
+	if (transcript_mode) "Udskrift er allerede til.";
 	@output_stream 2;
-	if (((HDR_GAMEFLAGS-->0) & 1) == 0) "Attempt to begin transcript failed.";
-	print "Start of a transcript of^";
+	if (((HDR_GAMEFLAGS-->0) & 1) == 0) "Forsøg på udskrift fejlede.";
+	print "Begyndelse af udskriften af";
 	Banner();
 	transcript_mode = true;
 ];
 
 [ ScriptOffSub;
 	transcript_mode = ((HDR_GAMEFLAGS-->0) & 1);
-	if (transcript_mode == false) "Transcripting is already off.";
-	print "^End of transcript.^";
+	if (transcript_mode == false) "Udskrift er allerede fra.";
+	print "^Afslutning af udskrift.^";
 	@output_stream -2;
-	if ((HDR_GAMEFLAGS-->0) & 1) "Attempt to end transcript failed.";
+	if ((HDR_GAMEFLAGS-->0) & 1) "Forsøg på stop af udskrift fejlede.";
 	transcript_mode = false;
 ];
 
 [ VerifySub;
 	@verify ?_verify_was_maybe_ok;
-	"The game file did not verify as intact, and may be corrupt.";
+	"Spil-filen verificerede ikke som intakt og kan være korrupt.";
 ._verify_was_maybe_ok;
-	"The game file has verified as intact.";
+	"Spil-filen verificerede som værende intakt.";
 ];
 
 
@@ -1382,46 +1420,46 @@ Verb meta 'verify'
 ! ---------------------
 
 #IfDef DEBUG;
-Verb meta 'pronoun' 'pronouns'
-    *                                           -> Pronouns;
+Verb meta 'pronoun' 'pronouns' 'pronomen' 'substantiv'
+    *                                   -> Pronouns;
 
-Verb meta 'random'
-	*                                           -> RandomSeed
-	* special                                   -> RandomSeed
-	* 'seed' number                             -> RandomSeed;
+Verb meta 'random' 'tilfældig'
+    *                                   -> RandomSeed
+    * special                           -> RandomSeed
+    * 'seed'/'initialisering' number    -> RandomSeed;
 
 Verb meta 'scope'
-	*                                           -> Scope
-	* noun                                      -> Scope;
+    *                                   -> Scope
+    * noun                              -> Scope;
 
 Verb meta 'purloin'
-	* noun										-> Purloin;
+    * noun                              -> Purloin;
 
 Verb meta 'tree'
-	*											-> Tree
-	* noun										-> Tree;
+    *                                   -> Tree
+    * noun                              -> Tree;
 
 Verb meta 'gonear'
-	* noun										-> GoNear;
+    * noun                              -> GoNear;
 
 Verb meta 'debug'
-	*                                           -> Debug
-	* 'reactive'                                -> Debug;
+    *                                   -> Debug
+    * 'reactive'                        -> Debug;
 
 Verb meta 'routines' 'messages'
-	*                                           -> RoutinesOn
-	* 'on'                                      -> RoutinesOn
-	* 'off'                                     -> RoutinesOff;
+    *                                   -> RoutinesOn
+    * 'on'                              -> RoutinesOn
+    * 'off'                             -> RoutinesOff;
 
 Verb meta 'actions'
-	*                                           -> ActionsOn
-	* 'on'                                      -> ActionsOn
-	* 'off'                                     -> ActionsOff;
+    *                                   -> ActionsOn
+    * 'on'                              -> ActionsOn
+    * 'off'                             -> ActionsOff;
 
 Verb meta 'timers' 'daemons'
-	*                                           -> TimersOn
-	* 'on'                                      -> TimersOn
-	* 'off'                                     -> TimersOff;
+    *                                   -> TimersOn
+    * 'on'                              -> TimersOn
+    * 'off'                             -> TimersOff;
 
 Global scope_cnt;
 
@@ -1432,7 +1470,7 @@ Global scope_cnt;
 ];
 
 [ PronounsSub;
-	print "It: ", (name) itobj, "^Him: ", (name) himobj, "^Her: ", (name) herobj, "^Them: ", (name) themobj, "^";
+	print "den: ", (name) uterobj, "^det: ", (name) neuterobj, "^ham: ", (name) himobj, "^hende: ", (name) herobj, "^dem: ", (name) themobj, "^";
 ];
 
 [ PurloinSub;
@@ -1448,16 +1486,16 @@ Global scope_cnt;
 	! sets the random seed, making randomness predictable
 	! also a test of special and number, thus the fancy grammar
 	!print special_word, " ", special_number," ",parsed_number,"^";
-	if(special_word ~=0) "You can't send randomness to an object!";
+	if(special_word ~=0) "Du kan ikke sende tilfældighed til et objekt!";
 	_i = parsed_number;
 	if(_i == 0) _i = 100; ! either 'xxxx' (unknown special) or '0'
 	random(-_i);
-	"The random seed is set to ", _i, ".";
+	"Tilfældighedsgeneratoren er initialiseret til ", _i, " (seed).";
 ];
 
 [ _ScopeSubHelper p_obj;
 	print scope_cnt++,": ", (a) p_obj, " (", p_obj, ")";
-	if(ObjectIsUntouchable(p_obj, true)) print " [untouchable]";
+	if(ObjectIsUntouchable(p_obj, true)) print " [urørligt]";
 	@new_line;
 ];
 
@@ -1577,18 +1615,18 @@ Global scope_cnt;
 
 [ _ListObjsMsg p_parent;
 	p_parent = 0; ! Avoid warning
-	print "^You can ";
-	if(also_flag) print "also ";
-	print "see ";
+	print "^Du kan ";
+	if(also_flag) print "også ";
+	print "se ";
 ];
 
 [ _ListObjsInOnMsg p_parent;
 	if(newline_flag)
 		print "^";
-	if(p_parent has supporter) print "On "; else print "In ";
-	print (the) p_parent, " you can ";
-	if(also_flag) print "also ";
-	print "see ";
+	if(p_parent has supporter) print "På "; else print "I ";
+	print (the) p_parent, " du kan ";
+	if(also_flag) print "også ";
+	print "se ";
 ];
 
 [ Look _obj _top_ceil _ceil _describe_room
@@ -1637,9 +1675,9 @@ Global scope_cnt;
 	_obj = parent(player);
 	while(_obj ~= _ceil or 0) {
 		if(_obj has supporter)
-			print " (on ";
+			print " (på ";
 		else
-			print " (in ";
+			print " (i ";
 		print (the) _obj, ")";
 		_obj = parent(_obj);
 	}
@@ -1692,7 +1730,7 @@ Global scope_cnt;
 		! write any remaining objects in a new paragraph
 		if(parent(_ceil) == 0) {
 			_you_can_see_1 = _ListObjsMsg;
-			_you_can_see_2 = " here.^";
+			_you_can_see_2 = " her.^";
 		} else {
 			_you_can_see_1 = _ListObjsInOnMsg;
 			_you_can_see_2 = ".^";

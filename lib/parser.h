@@ -727,12 +727,13 @@ Constant _PARSENP_CHOOSEOBJ_WEIGHT = 1000;
 	}
 
 	! check for pronouns
-	if(p_parse_pointer --> 0 == 'it' or 'him' or 'her' or 'them') {
+	if(p_parse_pointer --> 0 == 'den' or 'det' or 'ham' or 'hende' or 'dem') {
 		switch(p_parse_pointer --> 0) {
-		'it': _noun = itobj;
-		'him': _noun = himobj;
-		'her': _noun = herobj;
-		'them': _noun = themobj;
+		'den': _noun = uterobj;
+                'det': _noun = neuterobj;
+		'ham': _noun = himobj;
+		'hende': _noun = herobj;
+		'dem': _noun = themobj;
 		}
 		if(_noun == 0) {
 			phase2_necessary = PHASE2_ERROR;
