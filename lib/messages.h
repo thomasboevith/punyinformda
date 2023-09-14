@@ -946,7 +946,7 @@ Constant SKIP_MSG_EXAMINE_DARK;
 #EndIf;
 #IfTrue MSG_SEARCH_IN_IT_ISARE < 1000;
 	MSG_SEARCH_IN_IT_ISARE:
-		print (The) noun, " indeholder ";
+            print (DenEllerDet) noun, " indeholder ";
 		PrintContents(0, noun);
 		".";
 #EndIf;
@@ -1169,6 +1169,12 @@ default:
     else print "n";
     print " er";
     !print (The) p_obj, " ", (isorare) p_obj;
+];
+
+[ DenEllerDet p_obj;
+    print "De";
+    if (p_obj has neuter) print "t";
+    else print "n";
 ];
 
 [ IsorAre obj;
