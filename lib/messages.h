@@ -838,7 +838,7 @@ Constant SKIP_MSG_EXAMINE_DARK;
 #Iftrue MSG_AUTO_TAKE < 1000;
 	MSG_AUTO_TAKE:
 	! p_arg_1 = the object the player automatically picks up
-	print "(taget først ", (the) p_arg_1, ")^";
+	print "(tager først ", (the) p_arg_1, ")^";
 #Endif;
 #Iftrue MSG_AUTO_DISROBE < 1000;
 	MSG_AUTO_DISROBE:

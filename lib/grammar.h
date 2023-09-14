@@ -157,7 +157,7 @@ Verb 'tryk' 'flyt' 'skub' 'pres'
     * noun noun=ADirection              -> PushDir
     * noun 'til' noun                   -> Transfer;
 
-Verb 'put' 'placer'
+Verb 'put' 'placer' 'læg'
     * multiexcept 'i//'/'indeni' noun   -> Insert
     * multiexcept 'inde'/'inden' 'i//' noun -> Insert
     * multiexcept 'på'/'ovenpå' noun    -> PutOn
@@ -193,9 +193,9 @@ Verb 'vis' 'præsenter'
     * creature held                     -> Show reverse
     * held 'til'/'for' creature         -> Show;
 
-Verb 'sid' 'læg' 'lig'
+Verb 'sid' 'lig'
     * 'på'/'i//'/'indeni' noun          -> Enter
-    * 'på' 'toppen' 'af' noun              -> Enter;
+    * 'på' 'toppen' 'af' noun           -> Enter;
 
 Verb 'lugt' 'snif' 'snus'
     *                                   -> Smell
