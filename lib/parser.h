@@ -1731,16 +1731,17 @@ Array guess_object-->5;
 	! the while(true) loop is only exited by return statements
 ];
 
+!DANISH
 [ PronounNotice p_object;
 	if(p_object == 0 or player or Directions) return;
 	if(p_object has pluralname) {
 		themobj = p_object;
 	} else if(p_object has animate) {
 		if(p_object has female) herobj = p_object;
-		else if(p_object has neuter) itobj = p_object;
+		else if(p_object has neuter) neuterobj = p_object;
 		else himobj = p_object;
-	} else itobj = p_object;
-	!print "he ", himobj, " she ", herobj, " it ", itobj, "^";
+	} else uterobj = p_object;
+	!print "neuterobj ", neuterobj, "uterobj", uterobj, "he ", himobj, " she ", herobj, "them ", themobj, "^";
 ];
 
 [ _ParseAndPerformAction _word_data _verb_grammar _i _j _pattern _noun _score _best_score _best_pattern _best_phase2 _best_second _action _verb_offset _selected_direction _selected_direction_index;
