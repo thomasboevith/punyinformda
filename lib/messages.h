@@ -747,11 +747,18 @@ Constant SKIP_MSG_EXAMINE_DARK;
 		! add a newline, but default is to write nothing.
 		!@new_line;
 #Endif;
+!DANISH
 #Ifndef SKIP_MSG_CLOSE_DEFAULT;
-	MSG_CLOSE_DEFAULT, MSG_ENTER_DEFAULT, MSG_LOCK_DEFAULT,
-	MSG_UNLOCK_DEFAULT, MSG_EXIT_DEFAULT:
-	! p_arg_1 = the base verb for this action ('open', 'close' etc).
-		"Du ", (verbname) p_arg_1, " ", (the) noun, ".";
+	 MSG_CLOSE_DEFAULT:
+            "Du lukker ", (the) noun, ".";
+         MSG_LOCK_DEFAULT:
+            "Du låser ", (the) noun, ".";
+	 MSG_UNLOCK_DEFAULT:
+            "Du låser ", (the) noun, " op.";
+	MSG_ENTER_DEFAULT:
+		print "Du går "; if (noun has container) print "ind i"; else print "i"; " ", (the) noun, ".";
+	MSG_EXIT_DEFAULT:
+		print "Du går "; if (noun has container) print "ud af"; else print "ned"; " ", (the) noun, ".";
 #Endif;
 #Ifndef SKIP_MSG_GIVE_DEFAULT;
 	MSG_GIVE_DEFAULT, MSG_SHOW_DEFAULT:
@@ -1157,7 +1164,11 @@ default:
 ];
 
 [ CObjIs p_obj;
-	print (The) p_obj, " ", (isorare) p_obj;
+    print "De";
+    if (p_obj has neuter) print "t";
+    else print "n";
+    print " er";
+    !print (The) p_obj, " ", (isorare) p_obj;
 ];
 
 [ IsorAre obj;

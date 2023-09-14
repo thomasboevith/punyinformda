@@ -362,6 +362,19 @@ Constant ONE_SPACE_STRING = " ";
 #Ifdef OPTIONAL_LANGUAGE_NUMBER;
 
 !DANISH
+[ UpperCase c;    ! for ZSCII matching ISO 8859-1
+   switch (c) {
+     'a' to 'z':                            c = c - 32;
+     201, 203, 211, 213, 220:               c++;
+     215, 216:                              c = c + 2;
+     155 to 157, 164, 165, 205 to 207:      c = c + 3;
+     181 to 185, 191 to 195:                c = c + 5 ;
+     169 to 174:                            c = c + 6;
+   }
+   return c;
+];
+
+!DANISH
 [ LanguageNumber n f;
     if (n == 0)    { print "nul"; rfalse; }
     if (n < 0)     { print "minus "; n = -n; }

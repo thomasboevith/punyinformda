@@ -70,6 +70,11 @@ Verb 'spis' 'æd'
 !	* noun                                      -> Enter;
 !#Endif;
 
+[ ADirection;
+	if (noun == Directions) rtrue;
+	rfalse;
+];
+
 #IfDef OPTIONAL_EXTENDED_VERBSET;
 Verb 'gå'
     *                                   -> GoIn
@@ -90,7 +95,8 @@ Verb 'gå'
 #IfNot;
 Verb 'gå'
     * noun                              -> Enter
-    * 'ind' 'i//' noun                  -> Enter;
+    * 'ind' 'i//' noun                  -> Enter
+    * 'ud' 'af' noun                    -> Exit;
 #Endif;
 
 Verb 'undersøg' 'u//' 'examine' 'x//'
@@ -106,11 +112,6 @@ Verb 'giv' 'tilbyd' 'byd' 'betal'
     * held 'til' creature               -> Give
     * held 'bort' 'til' creature        -> Give
     * creature held                     -> Give reverse;
-
-[ ADirection;
-	if (noun == Directions) rtrue;
-	rfalse;
-];
 
 Verb 'sæt'
     * multiexcept 'ind' 'i//' noun              -> Insert;
@@ -206,10 +207,6 @@ Verb 'stå'
     * 'af'                              -> Exit
     * 'op'                              -> Exit
     * 'på' noun                         -> Enter;
-
-Verb 'tænd'
-    * noun                              -> SwitchOn
-    * 'for' noun                        -> SwitchOn;
 
 Verb 'tag'
     * multi                             -> Take
@@ -365,13 +362,13 @@ Verb 'bær'
 		_door_dir = DirPropToFakeObj(_door_dir);
 		<<Go _door_dir>>;
 	}
-	if(noun hasnt enterable) { PrintMsg(MSG_ENTER_YOU_CANT, 'gå ind'); rtrue; }
+	if(noun hasnt enterable) { PrintMsg(MSG_ENTER_YOU_CANT, 'how'); rtrue; }
 	if(player in noun) { PrintMsg(MSG_ENTER_ALREADY); rtrue; }
 	if(noun has container && noun hasnt open) { PrintMsg(MSG_ENTER_NOT_OPEN, noun); rtrue; }
 	if(parent(noun) ~= parent(player)) { PrintMsg(MSG_ENTER_BAD_LOCATION); rtrue; }
 	PlayerTo(noun, true);
 	run_after_routines_msg = MSG_ENTER_DEFAULT;
-	run_after_routines_arg_1 = 'gå ind';
+        run_after_routines_arg_1 = 'gaarqind';
 ];
 
 [ ExamineSub x;
@@ -828,8 +825,11 @@ Verb 'sgu' 'sørens' 'fy' 'pokker'
 	* topic                                     -> Mild;
 
 Verb 'brænd' 'tænd' 'antænd'
-	* noun                                      -> Burn
-	* noun 'med' held                          -> Burn;
+    * noun                              -> Burn
+    * noun 'med' held                   -> Burn
+    * noun                              -> SwitchOn
+    * 'for' noun                        -> SwitchOn;
+
 
 Verb 'køb'
 	* noun                                      -> Buy;
@@ -854,9 +854,6 @@ Verb 'nej' 'næ'
 Verb 'skræl'
     * noun                              -> Take
     * noun 'af'                         -> Take;
-
-Verb 'bed'
-    *                                           -> Pray;
 
 Verb 'lirk' 'dirk'
     * noun 'med' held                   -> Unlock
@@ -897,7 +894,7 @@ Verb 'smag'
 Verb 'tænk'
     *                                   -> Think;
 
-Verb 'overfør' 'flyt'
+Verb 'overfør'
     * noun 'til' noun                   -> Transfer;
 
 Verb 'vågn' 'væk'
