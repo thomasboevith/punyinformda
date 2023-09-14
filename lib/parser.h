@@ -14,8 +14,8 @@ System_file;
 		parse -> 1 = 0;
         if(n == 1) {
         	! one word reply
-            if(parse --> 1 == 'yes' or 'y//') rtrue;
-            if(parse --> 1 == 'no' or 'n//') rfalse;
+            if(parse --> 1 == 'ja' or 'j//' or 'yes' or 'y//') rtrue;
+            if(parse --> 1 == 'nej' or 'no' or 'n//') rfalse;
         }
         PrintMsg(MSG_YES_OR_NO);
     }
