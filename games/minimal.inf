@@ -82,11 +82,12 @@ Object Biblioteket "Biblioteket"
 	with
 		description "Du er i et bibliotek.";
 
-Object -> Kasse "kasse"
-	with
-		name 'kasse',
-		inside_description "Det føles virkelig rart at stå i kassen.",
-	has container open openable enterable;
+Object  -> Kasse "kasse"
+ with
+        name 'kasse',
+        short_name_def "kassen",
+        inside_description "Det føles virkelig rart at stå i kassen.",
+ has    container open openable enterable;
 
 [Initialise;
 	print "^^Og således begynder eventyret...^^";
