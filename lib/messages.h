@@ -736,7 +736,7 @@ Constant SKIP_MSG_EXAMINE_DARK;
 		print "Du åbner ", (the) noun;
 		if(noun has container && noun hasnt transparent &&
 				~~IndirectlyContains(noun, player)) {
-			print ", og finder ";
+			print " og finder ";
 			if(PrintContents(0, noun)==false) print "intet";
 		}
 		".";
