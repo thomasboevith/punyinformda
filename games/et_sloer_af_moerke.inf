@@ -68,20 +68,18 @@ Object  -> kasse "kasse"
         name 'kasse' 'kassen',
         inside_description "Det føles virkelig rart at stå i kassen.",
         short_name_def "kassen",
-        article  ARTICLE_EN,
  has    container open openable enterable;
 
 
 Object  -> kamera "kamera"
  with
         name 'kamera' 'kameraet',
-        article  ARTICLE_ET,
  has    neuter;
 
 Object  -> aeg "fugleæg"
  with
         name 'fugleæg' 'fugleæggene' 'æg' 'æggene',
-        article  ARTICLE_NOGLE,
+        short_name_def "fugleæggene",
  has    pluralname;
 
 
