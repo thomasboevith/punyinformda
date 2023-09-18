@@ -214,7 +214,7 @@ Verb 'tag'
     * multi 'op'/'frem'                 -> Take
     * noun 'af'                         -> Disrobe
     * noun 'af' 'mig'/'dig'             -> Disrobe
-        * multiinside 'fra'/'i//'/'af' noun -> Remove
+    * multiinside 'fra'/'i//'/'af' noun -> Remove
     * multiinside 'op'/'frem'/'ud'/'bort' 'i//'/'fra'/'udfra'/'af' noun -> Remove
     * held 'på'                         -> Wear
     * held 'på' 'mig'/'dig'             -> Wear
@@ -245,7 +245,7 @@ Verb 'lås'
     * noun 'med' held                   -> Lock
     * noun 'op' 'med' held              -> Unlock;
 
-Verb 'vent' 'z'
+Verb 'vent' 'z' 'wait'
     *                                   -> Wait;
 
 Verb 'bær'
