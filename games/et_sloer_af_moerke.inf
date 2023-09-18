@@ -63,26 +63,6 @@ Object  foyer "Foyeren i Operahuset"
             udenfor bliver værre og værre.",
  has    light;
 
-Object  -> kasse "kasse"
- with
-        name 'kasse' 'kassen',
-        inside_description "Det føles virkelig rart at stå i kassen.",
-        short_name_def "kassen",
- has    container open openable enterable;
-
-
-Object  -> kamera "kamera"
- with
-        name 'kamera' 'kameraet',
- has    neuter;
-
-Object  -> aeg "fugleæg"
- with
-        name 'fugleæg' 'fugleæggene' 'æg' 'æggene',
-        short_name_def "fugleæggene",
- has    pluralname;
-
-
 Object  garderobe "Garderobe"
  with   description
             "Væggene i dette lille rum var øjensynligt engang udstyret med
