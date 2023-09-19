@@ -362,19 +362,6 @@ Constant ONE_SPACE_STRING = " ";
 #Ifdef OPTIONAL_LANGUAGE_NUMBER;
 
 !DANISH
-[ UpperCase c;    ! for ZSCII matching ISO 8859-1
-   switch (c) {
-     'a' to 'z':                            c = c - 32;
-     201, 203, 211, 213, 220:               c++;
-     215, 216:                              c = c + 2;
-     155 to 157, 164, 165, 205 to 207:      c = c + 3;
-     181 to 185, 191 to 195:                c = c + 5 ;
-     169 to 174:                            c = c + 6;
-   }
-   return c;
-];
-
-!DANISH
 [ LanguageNumber n f;
     if (n == 0)    { print "nul"; rfalse; }
     if (n < 0)     { print "minus "; n = -n; }
@@ -433,43 +420,37 @@ Constant ONE_SPACE_STRING = " ";
 
 !DANISH
 [ _PrintObjName p_obj p_form;
-    !if(p_obj.short_name_def ~= 0) print "SHORT_NAME_DEF";
-    if(p_obj hasnt proper && p_form) {
-        if (p_obj.article ofclass Routine)
-            RunRoutines(p_obj, article);
-        else {
-            if(p_form == FORM_CDEF) {
-                !print "FORM_CDEF";
-                !print (string) LanguageArticles-->(p_obj.article);
-                !PrintShortName(p_obj);
-                if(p_obj.short_name_def ~= 0) print (string) p_obj.short_name_def;
-                else if (p_obj has neuter) print (object) p_obj, "et";
-                else if (p_obj has pluralname) print (object) p_obj, "ene";
-                else print (object) p_obj, "en"; ! defaults to uter 
-           }
-            else if(p_form == FORM_DEF) {
-                !print "FORM_DEF";
-                if(p_obj.short_name_def ~= 0) print (string) p_obj.short_name_def;
-                else if (p_obj has neuter) print (object) p_obj, "et";
+    if(p_obj hasnt proper) {
+        if(p_form == FORM_CDEF || p_form == FORM_DEF) {
+            !print "FORM_CDEF or FORM_DEF";
+            !print (string) LanguageArticles-->(p_obj.article);
+            !PrintShortName(p_obj);
+            if(p_obj.short_name_def ~= 0) {
+                print (string) p_obj.short_name_def;
+            } else {
+                if (p_obj has neuter) print (object) p_obj, "et";
                 else if (p_obj has pluralname) print (object) p_obj, "ene";
                 else print (object) p_obj, "en"; ! defaults to uter
             }
-            else if(p_form == FORM_INDEF) {
+            rtrue;
+        } else {
+            if(p_form == FORM_INDEF) { ! En kasse / nogle æg
                 !print "FORM_INDEF";
                 if(p_obj.&article) {
                     print (string) LanguageArticles-->(p_obj.article+2);
                     !PrintOrRun(p_obj, article, true);
-                }
-                else if(p_obj has pluralname)
+                } else if(p_obj has pluralname) {
                     print "nogle ";
-                else {
+                } else {
                     if (p_obj has neuter) print "et ";
                     else print "en ";
                 }
                 PrintShortName(p_obj);
+                rtrue;
             }
         }
     }
+    PrintShortName(p_obj);
 ];
 
 [ _IsAreString p_plural;
