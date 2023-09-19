@@ -17,9 +17,9 @@ Verb 'angrib' 'bræk' 'knæk' 'ødelæg' 'bekæmp' 'dræb' 'myrd'
     * noun                              -> Attack
     * noun 'med' held                   -> Attack;
 
-Verb 'klatre' 'klatr' 'kravl' 'bestig'
+Verb 'klatre' 'klatr' 'kravl' 'bestig' 'stig'
     * noun                              -> Climb
-    * 'på'/'over'/'opover'/'i//' noun   -> Climb
+    * 'på'/'over'/'opover' noun         -> Climb
     * 'ud'/'af'/'ned'                   -> Exit
     * 'af' noun                         -> Exit
     * 'ned' 'fra'/'af' noun             -> Exit
@@ -28,15 +28,15 @@ Verb 'klatre' 'klatr' 'kravl' 'bestig'
     * 'gennem'/'igennem' noun           -> Enter;
 
 Verb 'luk'
-    * noun                              -> Close
-    * noun 'igen'                       -> Close
-    * 'for' noun                        -> SwitchOff
-    * 'af' 'for' noun                   -> SwitchOff;
+    * noun                              -> Close;
 
-Verb 'skær' 'beskær' 'snit'
+Verb 'sluk'
+    * noun                              -> SwitchOff
+    * 'for' noun                        -> SwitchOff;
+
+Verb 'skær' 'snit'
     * noun                              -> Cut
-    * noun 'ned'                        -> Cut
-    * 'af'/'op'/'ned'/'i//' noun        -> Cut;
+    * noun 'med' held                   -> Attack;
 
 Verb 'grav'
     * noun                              -> Dig
@@ -53,22 +53,13 @@ Verb 'smid' 'dump' 'kast'
     * held                              -> Disrobe
     * multiexcept 'i//'/'indeni' noun   -> Insert
     * multiexcept 'ind' 'i//' noun      -> Insert
-    * multiexcept 'på'/'ovenpå' noun    -> PutOn
+    * multiexcept 'på' noun             -> PutOn
+    * multiexcept 'oven' 'på' noun      -> PutOn
     * multiexcept 'mod' noun            -> ThrowAt
     * multiexcept 'op'/'oppe' 'på' noun -> PutOn;
 
 Verb 'spis' 'æd'
-    * held                              -> Eat
-    * held 'op'                         -> Eat;
-
-!#IfDef OPTIONAL_EXTENDED_VERBSET;
-!Verb 'enter'
-!	*                                           -> GoIn
-!	* noun                                      -> Enter;
-!#IfNot;
-!Verb 'enter'
-!	* noun                                      -> Enter;
-!#Endif;
+    * held                              -> Eat;
 
 [ ADirection;
 	if (noun == Directions) rtrue;
@@ -80,18 +71,24 @@ Verb 'gå'
     *                                   -> GoIn
     * 'ind'                             -> GoIn
     * noun                              -> Enter
+    * 'ind' 'i//' noun                  -> Enter
     * 'ind'/'op'/'ned' 'i//' noun       -> Enter
     * 'ind'/'på' noun                   -> Enter
     * 'op'/'oven' 'på' noun             -> Enter
-    * 'ind' 'gennem'/'igennem' noun     -> Enter
     * 'gennem'/'igennem' noun           -> Enter
+    * 'ind' 'gennem'/'igennem' noun     -> Enter
     * 'ud'                              -> Exit
-    * 'ud'/'ned'/'op' 'af'/'fra' noun   -> Exit
-    * 'op'/'ud'/'af'                    -> Exit
-    * 'ud' 'gennem'/'igennem' noun      -> Exit
+    * 'op'/'ud'/'ned' 'af'/'fra'/'gennem'/'igennem' noun -> Exit
     * 'af' noun                         -> GetOff
     * noun=ADirection                   -> Go
     * 'til'/'mod' noun=ADirection       -> Go;
+
+    * 'ud'/'af'/'ned'                   -> Exit
+    * 'af' noun                         -> Exit
+    * 'ned' 'fra'/'af' noun             -> Exit
+    * 'op' 'på' noun                    -> Climb
+    * 'ind' 'i//'/'gennem'/'igennem' noun -> Enter
+    * 'gennem'/'igennem' noun           -> Enter;
 #IfNot;
 Verb 'gå'
     * noun                              -> Enter
@@ -103,6 +100,7 @@ Verb 'undersøg' 'u//' 'examine' 'x//'
     * noun                              -> Examine;
 
 Verb 'forlad'
+    *                                   -> Exit
     * noun                              -> Exit;
 
 Verb 'fyld'
@@ -117,30 +115,30 @@ Verb 'sæt'
     * multiexcept 'ind' 'i//' noun              -> Insert;
 
 #Ifdef OPTIONAL_FLEXIBLE_INVENTORY;
-Verb 'ejendele' 'i//' 't//' 'list'
+Verb 'ejendele' 'inventory' 'i//' 't//' 'list'
     *                                   -> Inv
     * 'lang'/'bred'                     -> Inv;
 #Ifnot;
-Verb 'ejendele' 'i//' 't//' 'list'
+Verb 'ejendele' 'inventory' 'i//' 't//' 'list'
     *                                   -> Inv;
 #Endif;
 
 Verb 'hop' 'spring'
     *                                   -> Jump
     * 'over' noun                       -> JumpOver
-    * 'ind'/'på' noun                   -> Enter
+    * 'på' noun                         -> Enter
     * 'ind' 'i//' noun                  -> Enter
     * 'ud' 'af'/'fra' noun              -> Exit
     * 'af'/'fra' noun                   -> Exit;
 
 Verb 'lyt'
-	*                                           -> Listen
-	* 'til' noun                                 -> Listen;
+    *                                   -> Listen
+    * 'til' noun                        -> Listen;
 
 Verb 'se' 'kig' 'k//' 'l//'
+    *                                   -> Look
     * noun                              -> Examine
     * 'på' noun                         -> Examine
-    *                                   -> Look
     * 'i//'/'indeni'/'gennem'/'igennem' noun -> Search
     * 'ind'/'inde' 'i//' noun           -> Search;
 
@@ -817,19 +815,22 @@ Array _PutOnMessages -->
 
 #IfDef OPTIONAL_EXTENDED_VERBSET;
 
-Verb 'blæse'
-	* held                                      -> Blow;
+Verb 'blæs' 'pust'
+    * noun                              -> Blow
+    * 'på'/'i//' noun                   -> Blow
+    * held                              -> Blow;
 
 Verb 'sgu' 'sørens' 'fy' 'pokker'
-	*                                           -> Mild
-	* topic                                     -> Mild;
+    *                                   -> Mild
+    * topic                             -> Mild;
 
-Verb 'brænd' 'tænd' 'antænd'
+Verb 'brænd' 'antænd'
     * noun                              -> Burn
-    * noun 'med' held                   -> Burn
+    * noun 'med' held                   -> Burn;
+
+Verb 'tænd'
     * noun                              -> SwitchOn
     * 'for' noun                        -> SwitchOn;
-
 
 Verb 'køb'
 	* noun                                      -> Buy;
@@ -1718,7 +1719,7 @@ Global scope_cnt;
 		! write any remaining objects in a new paragraph
 		if(parent(_ceil) == 0) {
 			_you_can_see_1 = _ListObjsMsg;
-			_you_can_see_2 = " her.^";
+			_you_can_see_2 = ".^";
 		} else {
 			_you_can_see_1 = _ListObjsInOnMsg;
 			_you_can_see_2 = ".^";
