@@ -205,6 +205,10 @@ Verb 'stå'
     * 'op'                              -> Exit
     * 'på' noun                         -> Enter;
 
+Verb 'tænd'
+    * noun                              -> SwitchOn
+    * 'for' noun                        -> SwitchOn;
+
 Verb 'tag'
     * multi                             -> Take
     * 'fat' 'i//' multi                 -> Take
@@ -826,10 +830,6 @@ Verb 'sgu' 'sørens' 'fy' 'pokker'
 Verb 'brænd' 'antænd'
     * noun                              -> Burn
     * noun 'med' held                   -> Burn;
-
-Verb 'tænd'
-    * noun                              -> SwitchOn
-    * 'for' noun                        -> SwitchOn;
 
 Verb 'køb'
 	* noun                                      -> Buy;
