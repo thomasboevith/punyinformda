@@ -762,12 +762,12 @@ Constant SKIP_MSG_EXAMINE_DARK;
 #Endif;
 #Ifndef SKIP_MSG_GIVE_DEFAULT;
 	MSG_GIVE_DEFAULT, MSG_SHOW_DEFAULT:
-		print_ret (The) second, " virker ikke interesseret.";
+		print_ret (CObjIs) second, " virker ikke interesseret.";
 #Endif;
 #Ifndef SKIP_MSG_ASKFOR_DEFAULT;
 	MSG_ASKFOR_DEFAULT, MSG_ASKTO_DEFAULT, MSG_ORDERS_WONT:
 	! p_arg_1 = the actor which the player has asked to do something.
-		print_ret (The) p_arg_1, " har bedre ting at tage sig til.";
+		print_ret (CObjIs) p_arg_1, " har bedre ting at tage sig til.";
 #Endif;
 #Ifndef SKIP_MSG_ENTER_NOT_OPEN;
 	MSG_ENTER_NOT_OPEN, MSG_EXIT_NOT_OPEN, MSG_INSERT_NOT_OPEN,
@@ -933,12 +933,12 @@ Constant SKIP_MSG_EXAMINE_DARK;
 #EndIf;
 #Ifndef SKIP_MSG_LOCK_KEY_DOESNT_FIT;
 	MSG_LOCK_KEY_DOESNT_FIT, MSG_UNLOCK_KEY_DOESNT_FIT:
-		print_ret (The) second, " passer ikke i låsen.";
+		print_ret (CObjIs) second, " passer ikke i låsen.";
 #Endif;
 #IfTrue MSG_EXAMINE_CLOSED < 1000;
 	MSG_EXAMINE_CLOSED:
 	! p_arg_1 = the examines object (which is closed).
-		print_ret (The) p_arg_1, " ", (isorare) p_arg_1, " lukket.";
+		print_ret (CObjIs) p_arg_1, " ", (isorare) p_arg_1, " lukket.";
 #Endif;
 #IfTrue MSG_REMOVE_NOT_HERE < 1000;
 	MSG_REMOVE_NOT_HERE:
@@ -958,7 +958,7 @@ Constant SKIP_MSG_EXAMINE_DARK;
 #EndIf;
 #IfTrue MSG_SEARCH_EMPTY < 1000;
 	MSG_SEARCH_EMPTY:
-		print_ret (CObjIs) noun, " tom.";
+                print_ret (CObjIs) noun, " tom.";
 #EndIf;
 #IfTrue MSG_SEARCH_NOTHING_ON < 1000;
 	MSG_SEARCH_NOTHING_ON:
@@ -970,7 +970,7 @@ Constant SKIP_MSG_EXAMINE_DARK;
 #EndIf;
 #IfTrue MSG_EXAMINE_ONOFF < 1000;
 	MSG_EXAMINE_ONOFF:
-		print_ret (The) noun, " ", (IsOrAre) noun, " lige nu indstillet ", (onoff) noun, ".";
+		print_ret (CObjIs) noun, " ", (IsOrAre) noun, " lige nu indstillet ", (onoff) noun, ".";
 #EndIf;
 #IfTrue MSG_EAT_DEFAULT < 1000;
 	MSG_EAT_DEFAULT:
@@ -987,12 +987,12 @@ MSG_RUB_DEFAULT, MSG_SQUEEZE_DEFAULT:
 #IfTrue MSG_TAKE_BELONGS < 1000;
 	MSG_TAKE_BELONGS:
 		! p_arg_1 = the object that is held by p_arg_2
-		print_ret (The) p_arg_1, " ser ud til at høre til ", (the) p_arg_2, ".";
+		print_ret (CObjIs) p_arg_1, " ser ud til at høre til ", (the) p_arg_2, ".";
 #EndIf;
 #IfTrue MSG_TAKE_PART_OF < 1000;
 	MSG_TAKE_PART_OF:
 		! p_arg_1 = the object that is part of p_arg_2
-		print_ret (The) p_arg_1, " ser ud til at være en del af ", (the) p_arg_2, ".";
+		print_ret (CObjIs) p_arg_1, " ser ud til at være en del af ", (the) p_arg_2, ".";
 #EndIf;
 #Ifndef OPTIONAL_NO_DARKNESS;
 #Ifndef SKIP_MSG_EXAMINE_DARK;
@@ -1090,7 +1090,7 @@ MSG_RUB_DEFAULT, MSG_SQUEEZE_DEFAULT:
 #IfTrue MSG_INSERT_NOT_CONTAINER < 1000;
 	MSG_INSERT_NOT_CONTAINER:
 		! p_arg_1 = the object that can't contain things
-		print_ret (The) p_arg_1, " kan ikke indeholde ting.";
+		print_ret (CObjIs) p_arg_1, " kan ikke indeholde ting.";
 #Endif;
 #IfTrue MSG_YES_OR_NO < 1000;
 	MSG_YES_OR_NO:
@@ -1122,12 +1122,12 @@ MSG_RUB_DEFAULT, MSG_SQUEEZE_DEFAULT:
 #IfDef OPTIONAL_EXTENDED_VERBSET;
 #IfTrue MSG_BLOW_DEFAULT < 1000;
 	MSG_BLOW_DEFAULT:
-		"Det er meningsløst at blæse ", (the) noun, ".";
+		"Det er meningsløst at blæse i ", (the) noun, ".";
 #EndIf;
 #IfTrue MSG_EMPTY_ALREADY_EMPTY < 1000;
 	MSG_EMPTY_ALREADY_EMPTY:
 		! p_arg_1 = the object that is already empty
-		print_ret (The) p_arg_1, " ", (isorare) p_arg_1, " tom allerede.";
+		print_ret (CObjIs) p_arg_1, " ", (isorare) p_arg_1, " tom allerede.";
 #EndIf;
 #IfTrue MSG_SET_DEFAULT < 1000;
 	MSG_SET_DEFAULT:
@@ -1188,13 +1188,14 @@ default:
 ];
 
 [ CTheyreorThats obj;
-	if (obj == player)			 { print "Du er"; return; }
-	if (obj has pluralname)		{ print "De er"; return; }
-	if (obj has animate) {
-		if (obj has female)		{ print "Hun er"; return; }
-		if (obj hasnt neuter) { print "Han er"; return; }
-	}
-	print "Det er";
+    if (obj == player) { print "Du er"; return; }
+    if (obj has pluralname) { print "De er"; return; }
+    if (obj has animate) {
+        if (obj has female) { print "Hun er"; return; }
+        if (obj hasnt neuter) { print "Han er"; return; }
+    }
+    if (obj has neuter) { print "Det er"; return; }
+    print "Den er";
 ];
 
 [ CTheyreorIts p_obj;
