@@ -80,7 +80,8 @@ Include "puny.h";
 
 Object Biblioteket "Biblioteket"
 	with
-		description "Du er i et bibliotek.";
+        description "Du er i et bibliotek.",
+ has    light;
 
 Object  -> kamera "kamera"
  with
