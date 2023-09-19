@@ -81,8 +81,7 @@ Verb 'gå'
     * 'op'/'ud'/'ned' 'af'/'fra'/'gennem'/'igennem' noun -> Exit
     * 'af' noun                         -> GetOff
     * noun=ADirection                   -> Go
-    * 'til'/'mod' noun=ADirection       -> Go;
-
+    * 'til'/'mod' noun=ADirection       -> Go
     * 'ud'/'af'/'ned'                   -> Exit
     * 'af' noun                         -> Exit
     * 'ned' 'fra'/'af' noun             -> Exit
