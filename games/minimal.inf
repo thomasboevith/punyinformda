@@ -84,7 +84,7 @@ Object Biblioteket "Biblioteket"
 
 Object  -> Kasse "kasse"
  with
-        name 'kasse',
+        name 'kasse' 'kassen',
         short_name_def "kassen",
         inside_description "Det føles virkelig rart at stå i kassen.",
  has    container open openable enterable;
