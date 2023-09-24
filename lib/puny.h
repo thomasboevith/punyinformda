@@ -406,7 +406,7 @@ Constant ONE_SPACE_STRING = " ";
 
 #Endif;
 
- !DANISH
+!DANISH
 [ PrintShortName o;
     if (o == 0) { print "intet"; rtrue; }
     switch (metaclass(o)) {
@@ -421,10 +421,12 @@ Constant ONE_SPACE_STRING = " ";
 !DANISH
 [ _PrintObjName p_obj p_form;
     if(p_obj hasnt proper) {
-        if(p_form == FORM_CDEF || p_form == FORM_DEF) {
-            !print "FORM_CDEF or FORM_DEF";
-            !print (string) LanguageArticles-->(p_obj.article);
-            !PrintShortName(p_obj);
+        if(p_form == FORM_CDEF) { ! Kassen / Huset / Æggene
+            if(p_obj.Cshort_name_def ~= 0) {
+                print (string) p_obj.Cshort_name_def;
+                rtrue;
+            }
+        } else if(p_form == FORM_DEF) { ! kassen / huset / æggene
             if(p_obj.short_name_def ~= 0) {
                 print (string) p_obj.short_name_def;
             } else {
@@ -434,11 +436,9 @@ Constant ONE_SPACE_STRING = " ";
             }
             rtrue;
         } else {
-            if(p_form == FORM_INDEF) { ! En kasse / nogle æg
-                !print "FORM_INDEF";
+            if(p_form == FORM_INDEF) { ! En kasse / Et hus / nogle æg
                 if(p_obj.&article) {
                     print (string) LanguageArticles-->(p_obj.article+2);
-                    !PrintOrRun(p_obj, article, true);
                 } else if(p_obj has pluralname) {
                     print "nogle ";
                 } else {
