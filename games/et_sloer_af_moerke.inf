@@ -116,8 +116,8 @@ Object  sloer "silkeslør"
         ],
         !		name 'smik' 'mørkt' 'sort' 'silke' 'slør' 'sløret',
         description
-            "En smuk kappe af fløjl med kanter af satin og med 
-            spredte stænk af regndråber. Kappen er så sort i farven, 
+            "Et smuk slør af fløjl med kanter af satin og med 
+            spredte stænk af regndråber. Sløret er så sort i farven, 
             at det næsten ser ud som om, det suger lyset fra rummet.",
         before [;
          Drop, PutOn:
