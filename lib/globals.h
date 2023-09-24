@@ -228,6 +228,7 @@ Property additive after  $ffff;
 
 !DANISH
 Property short_name_def;
+Property Cshort_name_def;
 
 Property n_to;  Property s_to; !  Slightly wastefully, these are
 Property e_to;  Property w_to; !  (they might be routines)
