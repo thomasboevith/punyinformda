@@ -39,7 +39,7 @@ Constant NO_SCORE = 0;
 !Constant OPTIONAL_ALLOW_WRITTEN_NUMBERS;
 !Constant OPTIONAL_GUESS_MISSING_NOUN;
 !Constant OPTIONAL_EXTENDED_METAVERBS;
-!Constant OPTIONAL_EXTENDED_VERBSET;
+Constant OPTIONAL_EXTENDED_VERBSET;
 !Constant OPTIONAL_FLEXIBLE_INVENTORY;
 !Constant OPTIONAL_LANGUAGE_NUMBER;
 !Constant OPTIONAL_LIST_TOGETHER;
@@ -112,16 +112,23 @@ Object -> lygte "lommelygte"
             "Lygten lyser svagt men kraftigt nok til at se ved.";
          SwitchOff:
             give self ~light;
-            "Lygten er slukket igen.";
+            "Du slukker lygten.";
         ],
  has    switchable;
 
-Object  -> kasse "kasse"
+Object  -> kasse "stor kasse"
  with
         name 'kasse' 'kassen',
         inside_description "Det føles virkelig rart at stå i kassen.",
         short_name_def "kassen",
+        Cshort_name_def "Kassen",
  has    container open openable enterable;
+
+Object  -> bord "cafébord"
+ with
+        name 'cafébord' 'cafébordet' 'bord' 'bordet',
+        Cshort_name_def "Cafébordet",
+ has    neuter supporter static;
 
 Object  -> -> aeg "fugleæg"
  with

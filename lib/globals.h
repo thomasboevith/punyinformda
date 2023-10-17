@@ -152,8 +152,8 @@ Constant comma_word   = 'comma,';  ! An "untypeable word" used to substitute
 Constant SOMETHING_STR = "something";
 Constant SOMEONE_STR = "someone";
 Constant SOMEDIRECTION_STR = "(some direction)";
-Constant IS_STR = "is ";
-Constant ARE_STR = "are ";
+Constant IS_STR = "er ";
+Constant ARE_STR = "er ";
 
 #Ifndef DEFAULT_CAPACITY;
 Constant DEFAULT_CAPACITY = 100;
@@ -192,6 +192,7 @@ Attribute clothing;
 Attribute worn;
 Attribute pluralname;
 Attribute female;
+Attribute male;
 Attribute neuter;
 Attribute general;
 Attribute switchable;
@@ -303,14 +304,14 @@ Constant FAKE_IN_OBJ = 10011;
 Constant FAKE_OUT_OBJ = 10012;
 #IfV5;
 Array _direction_dict_words static --> 'n//' 's//' 'e//' 'w//' 'ne' 'nw' 'se' 'sw' 'u//' 'd//' 0 0
-	'north' 'south' 'east' 'west' 'northeast' 'northwest' 'southeast' 'southwest' 'up' 'down' 'in' 'out';
+	'nord' 'syd' 'øst' 'vest' 'nordøst' 'nordvest' 'sydøst' 'sydvest' 'op' 'ned' 'ind' 'ud';
 #Ifdef OPTIONAL_SHIP_DIRECTIONS;
 Array _ship_direction_dict_words static --> 'f//' 'a//' 'sb' 'p//' 0 0 0 0 'u//' 'd//' 0 0
-	'fore' 'aft' 'starboard' 'port' 0 0 0 0 'up' 'down' 'in' 'out';
+	'for' 'agter' 'styrbord' 'bagbord' 0 0 0 0 'op' 'ned' 'ind' 'ud';
 #Endif;
 #Endif;
 Array direction_properties_array static -> 0 n_to s_to e_to w_to ne_to nw_to se_to sw_to u_to d_to in_to out_to;
-Array direction_name_array static --> "direction" "north" "south" "east" "west" "northeast" "northwest" "southeast" "southwest" "up" "down" "in" "out";
+Array direction_name_array static --> "direction" "nord" "syd" "øst" "vest" "nordøst" "nordvest" "sydøst" "sydvest" "op" "ned" "ind" "ud";
 Constant DIRECTION_COUNT = 12;
 
 #IfNot; ! not OPTIONAL_FULL_DIRECTIONS
@@ -321,14 +322,14 @@ Constant FAKE_IN_OBJ = 10007;
 Constant FAKE_OUT_OBJ = 10008;
 #IfV5;
 Array _direction_dict_words static --> 'n//' 's//' 'e//' 'w//' 'u//' 'd//' 0 0
-	'north' 'south' 'east' 'west' 'up' 'down' 'in' 'out';
+	'nord' 'syd' 'øst' 'vest' 'op' 'ned' 'ind' 'ud';
 #Ifdef OPTIONAL_SHIP_DIRECTIONS;
 Array _ship_direction_dict_words static --> 'f//' 'a//' 'sb' 'p//' 'u//' 'd//' 0 0
-	'fore' 'aft' 'starboard' 'port' 'up' 'down' 'in' 'out';
+	'for' 'agter' 'styrbord' 'bagbord' 'op' 'ned' 'ind' 'ud';
 #Endif;
 #Endif;
 Array direction_properties_array static -> 0 n_to s_to e_to w_to u_to d_to in_to out_to;
-Array direction_name_array static --> "direction" "north" "south" "east" "west" "up" "down" "in" "out";
+Array direction_name_array static --> "direction" "nord" "syd" "øst" "vest" "op" "ned" "ind" "ud";
 Constant DIRECTION_COUNT = 8;
 
 #EndIf; ! not OPTIONAL_FULL_DIRECTIONS
@@ -741,7 +742,7 @@ Object Directions
 			if(normal_directions_enabled) {
 				@scan_table _w _arr (DIRECTION_COUNT * 2) -> _i ?_matched_word_in_list;
 #Ifndef OPTIONAL_SHIP_DIRECTIONS;
-				if(_w == 'floor' or 'ground') {
+                            if(_w == 'floor' or 'ground') {
 					selected_direction_index = DIRECTION_COUNT - 2;
 	        		jump _matched_and_have_set_dir_index;
 				}

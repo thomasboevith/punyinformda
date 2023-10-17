@@ -78,7 +78,7 @@ Constant MSG_FILL_NO_WATER "Men der er intet vand her.";
 Constant MSG_DIG_NO_USE "Det har ikke noget formål at grave her.";
 #EndIf;
 #Ifndef MSG_WAIT_DEFAULT;
-Constant MSG_WAIT_DEFAULT "Der sker intet.";
+Constant MSG_WAIT_DEFAULT "Du venter lidt.";
 #EndIf;
 #Ifndef MSG_TOUCH_DEFAULT;
 Constant MSG_TOUCH_DEFAULT "Du føler intet uventet.";
@@ -654,7 +654,7 @@ Constant SKIP_MSG_EXAMINE_DARK;
 #Endif;
 #Ifndef SKIP_MSG_PUSH_STATIC;
 	MSG_PUSH_STATIC, MSG_PULL_STATIC, MSG_TURN_STATIC, MSG_TAKE_STATIC:
-		print_ret (CTheyreorThats) noun, " sidder fast.";
+		print_ret (CDenEllerDet) noun, " sidder fast.";
 #Endif;
 #Ifndef SKIP_MSG_PUSH_SCENERY;
 	MSG_PUSH_SCENERY, MSG_PULL_SCENERY, MSG_TURN_SCENERY:
@@ -720,7 +720,7 @@ Constant SKIP_MSG_EXAMINE_DARK;
 #EndIf;
 #IfTrue MSG_PUTON_NOT_SUPPORTER < 1000;
 	MSG_PUTON_NOT_SUPPORTER:
-		"Du kan ikke putter ting oven på ", (ThatorThose) second, ".";
+		"Du kan ikke lægge ting oven på ", (ThatorThose) second, ".";
 #EndIf;
 #Ifndef SKIP_MSG_TAKE_ANIMATE;
 	MSG_TAKE_ANIMATE, MSG_EAT_ANIMATE:
@@ -833,7 +833,7 @@ Constant SKIP_MSG_EXAMINE_DARK;
 #Endif;
 #Ifndef SKIP_MSG_SWITCH_ON_DEFAULT;
 	MSG_SWITCH_ON_DEFAULT, MSG_SWITCH_OFF_DEFAULT:
-		"Du slår ", (the) noun, " ", (OnOff) noun, ".";
+		print "Du "; if (noun hasnt on) print "slukker"; else print "tænder"; print " ", (the) noun, ".^";
 #Endif;
 #Iftrue MSG_AUTO_TAKE < 1000;
 	MSG_AUTO_TAKE:
@@ -1150,7 +1150,7 @@ default:
 ];
 
 [ ThatorThose obj;
-	if (obj has pluralname) print "dem"; else print "den";
+    if (obj has pluralname) print "dem"; else DenEllerDet(obj);
 ];
 
 [ ItorThem obj;
@@ -1158,9 +1158,9 @@ default:
 	if (obj has pluralname) { print "dem"; rtrue; }
 	if (obj has animate) {
 		if (obj has female) { print "hende"; rtrue; }
-		if (obj hasnt neuter) { print "ham"; rtrue; }
+                if (obj has male) { print "ham"; rtrue; }
 	}
-	print "den";
+        DenEllerDet(obj);
 ];
 
 [ CObjIs p_obj;
@@ -1192,7 +1192,7 @@ default:
     if (obj has pluralname) { print "De er"; return; }
     if (obj has animate) {
         if (obj has female) { print "Hun er"; return; }
-        if (obj hasnt neuter) { print "Han er"; return; }
+        if (obj has male) { print "Han er"; return; }
     }
     if (obj has neuter) { print "Det er"; return; }
     print "Den er";

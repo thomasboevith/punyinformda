@@ -421,7 +421,8 @@ Object CheapScenery "object"
 			_ret = _ParseCheapScenery(location, cheap_scenery, wn);
 			if(CSDATA-->CSDATA_PRONOUN == CS_THEM) {
 				give self pluralname;
-				if(itobj == self) itobj = 0;
+                                if(neuterobj == self) neuterobj = 0;
+                                if(uterobj == self) uterobj = 0;
 			} else {
 				give self ~pluralname;
 				if(themobj == self) themobj = 0;
@@ -476,8 +477,9 @@ Object CheapScenery "object"
 		],
 		react_after [;
 			Go:
-				if(itobj == self) itobj = 0;
-				if(themobj == self) themobj = 0;
+                                if(neuterobj == self) neuterobj = 0;
+                                if(uterobj == self) uterobj = 0;
+                                if(themobj == self) themobj = 0;
 		],
 		found_in [;
 			if(location provides cheap_scenery) rtrue;

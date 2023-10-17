@@ -69,8 +69,9 @@ Verb 'spis' 'æd'
 #IfDef OPTIONAL_EXTENDED_VERBSET;
 Verb 'gå'
     *                                   -> GoIn
-    * 'ind'                             -> GoIn
+    * noun=ADirection                   -> Go
     * noun                              -> Enter
+    * 'ind'                             -> GoIn
     * 'ind' 'i//' noun                  -> Enter
     * 'ind'/'op'/'ned' 'i//' noun       -> Enter
     * 'ind'/'på' noun                   -> Enter
@@ -80,7 +81,6 @@ Verb 'gå'
     * 'ud'                              -> Exit
     * 'op'/'ud'/'ned' 'af'/'fra'/'gennem'/'igennem' noun -> Exit
     * 'af' noun                         -> GetOff
-    * noun=ADirection                   -> Go
     * 'til'/'mod' noun=ADirection       -> Go
     * 'ud'/'af'/'ned'                   -> Exit
     * 'af' noun                         -> Exit
@@ -90,6 +90,7 @@ Verb 'gå'
     * 'gennem'/'igennem' noun           -> Enter;
 #IfNot;
 Verb 'gå'
+    * noun=ADirection                   -> Go
     * noun                              -> Enter
     * 'ind' 'i//' noun                  -> Enter
     * 'ud' 'af' noun                    -> Exit;
@@ -244,6 +245,7 @@ Verb 'snur' 'skru' 'vrid' 'drej'
 
 Verb 'lås'
     * noun 'med' held                   -> Lock
+    * noun 'op'                         -> Unlock
     * noun 'op' 'med' held              -> Unlock;
 
 Verb 'vent' 'z' 'wait'
@@ -363,13 +365,13 @@ Verb 'bær'
 		_door_dir = DirPropToFakeObj(_door_dir);
 		<<Go _door_dir>>;
 	}
-	if(noun hasnt enterable) { PrintMsg(MSG_ENTER_YOU_CANT, 'how'); rtrue; }
+	if(noun hasnt enterable) { PrintMsg(MSG_ENTER_YOU_CANT, 'gå'); rtrue; }
 	if(player in noun) { PrintMsg(MSG_ENTER_ALREADY); rtrue; }
 	if(noun has container && noun hasnt open) { PrintMsg(MSG_ENTER_NOT_OPEN, noun); rtrue; }
 	if(parent(noun) ~= parent(player)) { PrintMsg(MSG_ENTER_BAD_LOCATION); rtrue; }
 	PlayerTo(noun, true);
 	run_after_routines_msg = MSG_ENTER_DEFAULT;
-        run_after_routines_arg_1 = 'gaarqind';
+        run_after_routines_arg_1 = 'gå';
 ];
 
 [ ExamineSub x;

@@ -490,7 +490,7 @@ Constant ONE_SPACE_STRING = " ";
 			new_line;
 			PrintContentsFromR(0, child(p_obj));
 		} else
-			if(PrintContents(" (på hvilken ", p_obj, ISARE_BIT)) print (char) ')';
+			if(PrintContents(" (på hvilken der ", p_obj, ISARE_BIT)) print (char) ')';
 	} else if(c_style & NEWLINE_BIT)
 		new_line;
 ];
