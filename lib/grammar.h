@@ -126,7 +126,6 @@ Verb 'ejendele' 'inventory' 'i//' 't//' 'list'
 Verb 'hop' 'spring'
     *                                   -> Jump
     * 'over' noun                       -> JumpOver
-    * 'på' noun                         -> Enter
     * 'ind' 'i//' noun                  -> Enter
     * 'ud' 'af'/'fra' noun              -> Exit
     * 'af'/'fra' noun                   -> Exit;
@@ -365,8 +364,8 @@ Verb 'bær'
 		_door_dir = DirPropToFakeObj(_door_dir);
 		<<Go _door_dir>>;
 	}
-	if(noun hasnt enterable) { PrintMsg(MSG_ENTER_YOU_CANT, 'gå'); rtrue; }
-	if(player in noun) { PrintMsg(MSG_ENTER_ALREADY); rtrue; }
+        if(noun hasnt enterable) { "Det kan du ikke."; }!PrintMsg(MSG_ENTER_YOU_CANT, 'gå'); rtrue; }
+        if(player in noun) { PrintMsg(MSG_ENTER_ALREADY); rtrue; }
 	if(noun has container && noun hasnt open) { PrintMsg(MSG_ENTER_NOT_OPEN, noun); rtrue; }
 	if(parent(noun) ~= parent(player)) { PrintMsg(MSG_ENTER_BAD_LOCATION); rtrue; }
 	PlayerTo(noun, true);
